@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Prototype V3.1</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="AreaCalculator.js"></script>
+        <script src="LayoutAlgorithm.js"></script>
+        <script src="canvas.js"></script>
+    </head>
+
+    <body>
+        <!-- <div style="display: flex; height: 150; padding: 0; margin: 0; justify-content: space-between;">
+
+            <div> 
+                <img width="280" height="150" src="https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2.png" class="custom-logo" alt="The Six Semiconductor Inc" decoding="async" srcset="https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2.png 400w, https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2-300x161.png 300w" sizes="(max-width: 400px) 100vw, 400px">
+                
+                <p></p>
+            </div>
+            <div class="info_bar_top">
+                <p> <span id="shapehover">Hover the mouse over an element to display data.</span></p>
+            </div>
+            <div class="info_bar_top">
+                <h2 style="margin: 0; padding: 0;" id="display_t_width">Total *PHY Width</h2>
+                <h2 style="margin: 0; padding: 0;" id="display_t_height">Total *PHY Height</h2>
+            </div>
+        </div> -->
+        <div class="top panel" >
+        
+                 <img  src="https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2.png" class="custom-logo" alt="The Six Semiconductor Inc" decoding="async" srcset="https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2.png 400w, https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2-300x161.png 300w"  sizes="(max-width: 400px) 100vw, 400px">
+
+            
+
+                <div class="drop_down">
+                    <form>
+                        <label>TECHNOLOGY  </label>
+                        <select onchange="set_scenario(this.value)" id="DDR_STANDARD_MENU">
+                            <option value="TSMC_N12">tsmc_ n12</option>
+                            <option value="n6_540_lanewidth">n6_540_lanewidth</option>
+                            <option value="n6_640_lanewidth">n6_640_lanewidth</option>
+                            <option value="n6_688_lanewidth">n6_688_lanewidth</option>
+                            
+                            
+                        </select>
+                    </form>
+                </div>
+                <div class="drop_down">
+                    <form>
+                        <label>DDR STANDARD  </label>
+                        <select autocomplete="off" onchange="set_DDR_STANDARD(this.value)" id="DDR_STANDARD_MENU">
+                            <option value="LP4">LP4</option>
+                            <option value="LP5">LP5</option>
+                            <option value="LP54">LP54</option>
+                            
+                            
+                        </select>
+                    </form>
+                </div>
+                
+                <div class="drop_down">
+                    <form>
+                        <label>PHY CONFIG  </label>
+                        <select autocomplete="off" onchange="set_PHY_CONFIG(this.value)" id="PHY_CONFIG_MENU">
+                            <option value="1x16">1x16</option>
+                            <option value="2x16">2x16</option>
+                            <option value="1x32">1x32</option>
+                        </select>
+                    </form>
+                </div>
+                
+                <div class="drop_down"> 
+                    <form>
+                        <label>MAX RANKS </label>
+                        <select autocomplete="off" onchange="set_MAX_RANKS(this.value)" id="MAX_RANKS_MENU">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=4>4</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="drop_down"> 
+                    <form style="padding-left: 6px;">
+                        <label style="display: flex; justify-content: center; align-items: center; "> DIE EDGE  
+                        </label>
+                        <select>
+                            <option>
+                                    NORTH
+                                </option>
+                            </select>
+                        </form> 
+                </div>
+
+
+                <div id="scaleable" class="">
+                    <form>
+                    <label> DCAP MULTIPLIER  </label>
+
+                    <input autocomplete="off" oninput="set_SCALEABLE(this.value)" type="number" min="0" max="10" value="1" class="slider" id="myRange">
+                    
+                    </form>
+                </div>
+            
+        </div>
+
+        <div style="padding: 0%;" class="canvas panel">
+            <canvas class="box" id="myCanvas" height="500" width="2400"></canvas>   
+        </div>
+
+
+
+
+        <div class="HUD">
+            <div class="info_bar panel">
+                <!-- <h1>Overview</h1> -->
+                <!-- <h2 id="display_t_width">Total PHY Width</h2>
+                <h2 id="display_t_height">Total PHY Height</h2> -->
+                <h3>Lane Count</h3>
+                <table style=" width: 50%;" id="loop"></table>
+                
+
+            </div>
+            
+            <div class="info_bar panel">
+                <h2 id="display_t_height">Total *PHY Height</h2>
+                <h2 id="display_t_width">Total *PHY Width</h2>
+            </div>
+            
+            <div class="info_bar panel">
+                <h3>selection view</h3>
+                <!-- hover-debugging -->
+                <p><code></code><span id="x"></span></p>
+                <p><code></code><span id="y"></span></p>
+                <p><code><span id="window_size"></span></code></p>
+                <p> <span id="shapehover">Hover the mouse over an element to display data.</span></p>
+
+            </div>
+        </div>
+        
+        
+        
+        <p>*: Estimates based on PHY HARDIP measurements only.</p>
+        <button onclick="show()" style="border-radius: 10px;">show more</button>
+
+
+        <div class="hide" id="hide">
+            <div class="info_bar panel">
+                <h3>Technology</h3>
+                <div id="loop2"></div>
+            </div>
+            
+        </div>
+    </body>
+
+</html>
