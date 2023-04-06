@@ -162,10 +162,12 @@ function render(){
 
 // DESCRIPTION:     displays info about content bseing hovered with mouse in real time.
 function updateDisplay(event) {
-    let mousex = event.pageX - 20;
-    let mousey = event.pageY -140;
+    var bounding = shape.getBoundingClientRect();
+    var xbound = bounding.left;
+    var ybound = bounding.top;
 
-
+    let mousex = event.pageX - xbound;
+    let mousey = event.pageY - ybound;
 
     // hover-debugging
     // document.getElementById("x").innerText = mousex;
