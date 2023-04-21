@@ -1,0 +1,116 @@
+#########################################################################################
+#                    CFG: 8 LP: 5 BAUD: 2400 MD: 16 DFI: 0
+#########################################################################################
+MajorSystemMode = LP5
+MajorMode = 16
+dfi2ckratio = 0
+dfiperiod = 2900
+wck2ckratio = 2
+EffectiveRL = 10
+EffectiveWL = 8
+csr_WL = 2
+csr_nWR = 2
+csr_RL = 2
+csr_WLS = 1
+csr_DQODT = 4
+csr_CAODT = 6
+csr_CSODT = 1
+MinorMode_iRetrainMode = 2
+MinorMode_iDLLCalibrationMode = 0
+
+
+#########################################################################################
+#                    CFG: 8 LP: 5 BAUD: 2400 MD: 16 DFI: 0 FUNCTIONAL_MODE
+#########################################################################################
+MajorSystemMode = LP5
+MajorMode = 16
+dfi2ckratio = 0
+dfiperiod = 2900
+wck2ckratio = 2
+EffectiveRL = 10
+EffectiveWL = 8
+csr_WL = 2
+csr_nWR = 2
+csr_RL = 2
+csr_WLS = 1
+csr_DbiWr = 1
+csr_DbiRd = 1
+csr_DMD = 1
+csr_DQODT = 4
+csr_CAODT = 6
+csr_CSODT = 1
+MinorMode_iRetrainMode = 2
+MinorMode_iDLLCalibrationMode = 0
+
+
+#########################################################################################
+#                    CFG: 8 LP: 5 BAUD: 2400 MD: 16 DFI: 0 FUNCTIONAL_TEST
+#########################################################################################
+MajorSystemMode = LP5
+MajorMode = 16
+dfi2ckratio = 0
+SimMode_iDisableDebugPrint = 0
+dfiperiod = 2900
+wck2ckratio = 2
+latencyMode = 1
+EffectiveRL = 10
+EffectiveWL = 8
+csr_WL = 2
+csr_nWR = 2
+csr_RL = 2
+csr_WLS = 1
+csr_DQODT = 4
+csr_CAODT = 6
+csr_CSODT = 1
+MinorMode_iActiveRanks = 2
+MinorMode_iRetrainMode = 2
+MinorMode_iWdqsDriveMode = 0
+MinorMode_iPLLCalMode = 0
+PLL_DisableHwCal = 0
+PLL_NumCalClkCycles = 16
+MinorMode_iDLLCalibrationMode = 0
+DLL_EnablePeriodicCal = 0
+DLL_Period = 739
+DLL_OverSampleRate = 15
+DLL_CodeChangeDelay = 15
+DLL_CommandWait = 3
+DLL_DcdlStart = 0
+DLL_DcdlStep = 8
+DLL_EnableUpdateLimit = 1
+DLL_UpdateLimit = 4
+MinorMode_iDFTProgram = 0
+MinorMode_iBumpReMap_En = 0
+MinorMode_iClkEnMode = 0
+MinorMode_iRxTCTrain = 0
+MinorMode_iRetrainGateMode = 1
+MinorMode_iCSTEn = 0
+MinorMode_iRxEnhancedTrainMode = 0
+MinorMode_iPhyMstr_DRAM_Mode = 0
+MinorMode_iRxReadGateScheme = 0
+MinorMode_iDMITrainMode = 1
+MinorMode_iClkGatingMode = 3
+MinorMode_iCalibrationMode = 1
+csr_WCK_ON = 0
+csr_RdqsPre = 1
+csr_WCKMode = 0
+tWCKENL_FS = 1
+tWCKPRE_Toggle_WR = 4
+csr_RpstMode = 0
+csr_RECC = 0
+csr_CKR = 1
+csr_BkOrg = 2
+csr_WCK_FM = 0
+tWCKENL_RD = 1
+csr_WECC = 0
+csr_CkMode = 0
+csr_WCK2DQIIntervalTimerRunTimeSetting = 153
+tWCKPST = 5
+csr_DVFSC = 0
+tWCKPRE_Static = 2
+csr_RdqsPst = 1
+tWCKENL_WR = 3
+tWCKPRE_Toggle_FS = 8
+csr_WCK2DQOIntervalTimerRunTimeSetting = 234
+tWCKPRE_Toggle_RD = 8
+csr_WckPst = 1
+

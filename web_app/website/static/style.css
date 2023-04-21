@@ -1,0 +1,52 @@
+/* .btn, .btn-light, .dropdown-toggle {
+    margin-left: 20px;
+
+} */
+
+.brsmall {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.brxsmall {
+  display: block;
+  margin-bottom: -0.4em;
+}
+
+/* #MajorSystemMode {
+    
+} */
+
+#table-container {
+  display: block;
+  margin: 20px 20px 20px 20px;
+  width: 80%;
+  align-self: center;
+}
+
+.btn.btn-out-dashed {
+  outline: 1px dashed #16151524;
+  outline-offset: -5px;
+  outline-width: 5px;
+}
+
+#expand-btn {
+  color: #4d484880 !important;
+  background-color: #e8e8e85b !important;
+}
+
+.modal-body {
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+}
+
+.form-row {
+  margin-left: 30px !important;
+}
+/* #myModal {
+
+} */
+
+.btn-outline-green {
+  border-color: #28a745;
+}

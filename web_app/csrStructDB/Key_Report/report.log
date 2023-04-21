@@ -1,0 +1,4999 @@
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
++----+------------------------+--------------------------------+-------------------------------+
+|    | FUNCTIONAL_SPEC        | FUNCTIONAL_MODE                | FUNCTIONAL_TEST               |
+|----+------------------------+--------------------------------+-------------------------------|
+|  0 | MajorSystemMode        | MinorMode_iRxTCTrain           | BumpReMapWCK_0                |
+|  1 | MajorMode              | MinorMode_iRxEnhancedTrainMode | BumpReMapDQ0_0                |
+|  2 | dfi2ckratio            | csr_DbiWr                      | BumpReMapDQ1_7                |
+|  3 | dfiperiod              | MinorMode_iPhyMstr_DRAM_Mode   | csr_CAODT                     |
+|  4 | wck2ckratio            | csr_DMD                        | MinorMode_iWdqsDriveMode      |
+|  5 | EffectiveRL            | MinorMode_iClkEnMode           | MinorMode_iRxReadGateScheme   |
+|  6 | EffectiveWL            | MinorMode_iCSTEn               | MinorMode_iDMITrainMode       |
+|  7 | csr_WL                 | csr_DbiRd                      | BumpReMapDQ0_5                |
+|  8 | csr_nWR                |                                | BumpReMapWCK_1                |
+|  9 | csr_RL                 |                                | DLL_CommandWait               |
+| 10 | csr_WLS                |                                | csr_PDDS                      |
+| 11 | tWDQS_on               |                                | BumpReMapCS_1                 |
+| 12 | tWDQS_off              |                                | BumpReMapCA_2                 |
+| 13 | csr_BL                 |                                | BumpReMapCK                   |
+| 14 | csr_RPST               |                                | BumpReMapDQ1_0                |
+| 15 | MinorMode_iActiveRanks |                                | BumpReMapCA_5                 |
+| 16 |                        |                                | BumpReMapDQ1_1                |
+| 17 |                        |                                | BumpReMapDQS_0                |
+| 18 |                        |                                | BumpReMapDBYTE_0              |
+| 19 |                        |                                | BumpReMapDQ1_4                |
+| 20 |                        |                                | MinorMode_iDLLCalibrationMode |
+| 21 |                        |                                | csr_DQSIntervalTimerRunTime   |
+| 22 |                        |                                | BumpReMapDMI_0                |
+| 23 |                        |                                | BumpReMapCA_1                 |
+| 24 |                        |                                | MinorMode_iRetrainMode        |
+| 25 |                        |                                | SimMode_iDisableDebugPrint    |
+| 26 |                        |                                | BumpReMapDQ0_6                |
+| 27 |                        |                                | BumpReMapCA_3                 |
+| 28 |                        |                                | BumpReMapCA_4                 |
+| 29 |                        |                                | DLL_EnableUpdateLimit         |
+| 30 |                        |                                | BumpReMapDQ1_2                |
+| 31 |                        |                                | BumpReMapDQ0_1                |
+| 32 |                        |                                | DLL_EnablePeriodicCal         |
+| 33 |                        |                                | BumpReMapDQ0_3                |
+| 34 |                        |                                | BumpReMapDQ0_2                |
+| 35 |                        |                                | BumpReMapDQ0_7                |
+| 36 |                        |                                | BumpReMapDQ1_6                |
+| 37 |                        |                                | MinorMode_iPLLCalMode         |
+| 38 |                        |                                | BumpReMapDQ1_5                |
+| 39 |                        |                                | MinorMode_iDFTProgram         |
+| 40 |                        |                                | DLL_Period                    |
+| 41 |                        |                                | DLL_CodeChangeDelay           |
+| 42 |                        |                                | DLL_DcdlStep                  |
+| 43 |                        |                                | BumpReMapCA_0                 |
+| 44 |                        |                                | BumpReMapCS_2                 |
+| 45 |                        |                                | BumpReMapCS_0                 |
+| 46 |                        |                                | latencyMode                   |
+| 47 |                        |                                | PLL_NumCalClkCycles           |
+| 48 |                        |                                | csr_DQODT                     |
+| 49 |                        |                                | BumpReMapCS_3                 |
+| 50 |                        |                                | PLL_DisableHwCal              |
+| 51 |                        |                                | BumpReMapDMI_1                |
+| 52 |                        |                                | BumpReMapDQ0_4                |
+| 53 |                        |                                | DLL_OverSampleRate            |
+| 54 |                        |                                | DLL_UpdateLimit               |
+| 55 |                        |                                | BumpReMapDQS_1                |
+| 56 |                        |                                | BumpReMapDQ1_3                |
+| 57 |                        |                                | BumpReMapDBYTE_1              |
+| 58 |                        |                                | csr_CSODT                     |
+| 59 |                        |                                | MinorMode_iBumpReMap_En       |
+| 60 |                        |                                | MinorMode_iRetrainGateMode    |
+| 61 |                        |                                | DLL_DcdlStart                 |
++----+------------------------+--------------------------------+-------------------------------+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
++----+------------------------+--------------------------------+-------------------------------+
+|    | FUNCTIONAL_SPEC        | FUNCTIONAL_MODE                | FUNCTIONAL_TEST               |
+|----+------------------------+--------------------------------+-------------------------------|
+|  0 | MajorSystemMode        | MinorMode_iRxTCTrain           | BumpReMapWCK_0                |
+|  1 | MajorMode              | MinorMode_iRxEnhancedTrainMode | BumpReMapDQ0_0                |
+|  2 | dfi2ckratio            | csr_DbiWr                      | BumpReMapDQ1_7                |
+|  3 | dfiperiod              | MinorMode_iPhyMstr_DRAM_Mode   | csr_CAODT                     |
+|  4 | wck2ckratio            | csr_DMD                        | MinorMode_iWdqsDriveMode      |
+|  5 | EffectiveRL            | MinorMode_iClkEnMode           | MinorMode_iRxReadGateScheme   |
+|  6 | EffectiveWL            | MinorMode_iCSTEn               | MinorMode_iDMITrainMode       |
+|  7 | csr_WL                 | csr_DbiRd                      | BumpReMapDQ0_5                |
+|  8 | csr_nWR                |                                | BumpReMapWCK_1                |
+|  9 | csr_RL                 |                                | DLL_CommandWait               |
+| 10 | csr_WLS                |                                | csr_PDDS                      |
+| 11 | tWDQS_on               |                                | BumpReMapCS_1                 |
+| 12 | tWDQS_off              |                                | BumpReMapCA_2                 |
+| 13 | csr_BL                 |                                | BumpReMapCK                   |
+| 14 | csr_RPST               |                                | BumpReMapDQ1_0                |
+| 15 | MinorMode_iActiveRanks |                                | BumpReMapCA_5                 |
+| 16 |                        |                                | BumpReMapDQ1_1                |
+| 17 |                        |                                | BumpReMapDQS_0                |
+| 18 |                        |                                | BumpReMapDBYTE_0              |
+| 19 |                        |                                | BumpReMapDQ1_4                |
+| 20 |                        |                                | MinorMode_iDLLCalibrationMode |
+| 21 |                        |                                | csr_DQSIntervalTimerRunTime   |
+| 22 |                        |                                | BumpReMapDMI_0                |
+| 23 |                        |                                | BumpReMapCA_1                 |
+| 24 |                        |                                | MinorMode_iRetrainMode        |
+| 25 |                        |                                | SimMode_iDisableDebugPrint    |
+| 26 |                        |                                | BumpReMapDQ0_6                |
+| 27 |                        |                                | BumpReMapCA_3                 |
+| 28 |                        |                                | BumpReMapCA_4                 |
+| 29 |                        |                                | DLL_EnableUpdateLimit         |
+| 30 |                        |                                | BumpReMapDQ1_2                |
+| 31 |                        |                                | BumpReMapDQ0_1                |
+| 32 |                        |                                | DLL_EnablePeriodicCal         |
+| 33 |                        |                                | BumpReMapDQ0_3                |
+| 34 |                        |                                | BumpReMapDQ0_2                |
+| 35 |                        |                                | BumpReMapDQ0_7                |
+| 36 |                        |                                | BumpReMapDQ1_6                |
+| 37 |                        |                                | MinorMode_iPLLCalMode         |
+| 38 |                        |                                | BumpReMapDQ1_5                |
+| 39 |                        |                                | MinorMode_iDFTProgram         |
+| 40 |                        |                                | DLL_Period                    |
+| 41 |                        |                                | DLL_CodeChangeDelay           |
+| 42 |                        |                                | DLL_DcdlStep                  |
+| 43 |                        |                                | BumpReMapCA_0                 |
+| 44 |                        |                                | BumpReMapCS_2                 |
+| 45 |                        |                                | BumpReMapCS_0                 |
+| 46 |                        |                                | latencyMode                   |
+| 47 |                        |                                | PLL_NumCalClkCycles           |
+| 48 |                        |                                | csr_DQODT                     |
+| 49 |                        |                                | BumpReMapCS_3                 |
+| 50 |                        |                                | PLL_DisableHwCal              |
+| 51 |                        |                                | BumpReMapDMI_1                |
+| 52 |                        |                                | BumpReMapDQ0_4                |
+| 53 |                        |                                | DLL_OverSampleRate            |
+| 54 |                        |                                | DLL_UpdateLimit               |
+| 55 |                        |                                | BumpReMapDQS_1                |
+| 56 |                        |                                | BumpReMapDQ1_3                |
+| 57 |                        |                                | BumpReMapDBYTE_1              |
+| 58 |                        |                                | csr_CSODT                     |
+| 59 |                        |                                | MinorMode_iBumpReMap_En       |
+| 60 |                        |                                | MinorMode_iRetrainGateMode    |
+| 61 |                        |                                | DLL_DcdlStart                 |
++----+------------------------+--------------------------------+-------------------------------+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
++----+------------------------+--------------------------------+-------------------------------+
+|    | FUNCTIONAL_SPEC        | FUNCTIONAL_MODE                | FUNCTIONAL_TEST               |
+|----+------------------------+--------------------------------+-------------------------------|
+|  0 | MajorSystemMode        | MinorMode_iRxTCTrain           | BumpReMapWCK_0                |
+|  1 | MajorMode              | MinorMode_iRxEnhancedTrainMode | BumpReMapDQ0_0                |
+|  2 | dfi2ckratio            | csr_DbiWr                      | BumpReMapDQ1_7                |
+|  3 | dfiperiod              | MinorMode_iPhyMstr_DRAM_Mode   | csr_CAODT                     |
+|  4 | wck2ckratio            | csr_DMD                        | MinorMode_iWdqsDriveMode      |
+|  5 | EffectiveRL            | MinorMode_iClkEnMode           | MinorMode_iRxReadGateScheme   |
+|  6 | EffectiveWL            | MinorMode_iCSTEn               | MinorMode_iDMITrainMode       |
+|  7 | csr_WL                 | csr_DbiRd                      | BumpReMapDQ0_5                |
+|  8 | csr_nWR                |                                | BumpReMapWCK_1                |
+|  9 | csr_RL                 |                                | DLL_CommandWait               |
+| 10 | csr_WLS                |                                | csr_PDDS                      |
+| 11 | tWDQS_on               |                                | BumpReMapCS_1                 |
+| 12 | tWDQS_off              |                                | BumpReMapCA_2                 |
+| 13 | csr_BL                 |                                | BumpReMapCK                   |
+| 14 | csr_RPST               |                                | BumpReMapDQ1_0                |
+| 15 | MinorMode_iActiveRanks |                                | BumpReMapCA_5                 |
+| 16 |                        |                                | BumpReMapDQ1_1                |
+| 17 |                        |                                | BumpReMapDQS_0                |
+| 18 |                        |                                | BumpReMapDBYTE_0              |
+| 19 |                        |                                | BumpReMapDQ1_4                |
+| 20 |                        |                                | MinorMode_iDLLCalibrationMode |
+| 21 |                        |                                | csr_DQSIntervalTimerRunTime   |
+| 22 |                        |                                | BumpReMapDMI_0                |
+| 23 |                        |                                | BumpReMapCA_1                 |
+| 24 |                        |                                | MinorMode_iRetrainMode        |
+| 25 |                        |                                | SimMode_iDisableDebugPrint    |
+| 26 |                        |                                | BumpReMapDQ0_6                |
+| 27 |                        |                                | BumpReMapCA_3                 |
+| 28 |                        |                                | BumpReMapCA_4                 |
+| 29 |                        |                                | DLL_EnableUpdateLimit         |
+| 30 |                        |                                | BumpReMapDQ1_2                |
+| 31 |                        |                                | BumpReMapDQ0_1                |
+| 32 |                        |                                | DLL_EnablePeriodicCal         |
+| 33 |                        |                                | BumpReMapDQ0_3                |
+| 34 |                        |                                | BumpReMapDQ0_2                |
+| 35 |                        |                                | BumpReMapDQ0_7                |
+| 36 |                        |                                | BumpReMapDQ1_6                |
+| 37 |                        |                                | MinorMode_iPLLCalMode         |
+| 38 |                        |                                | BumpReMapDQ1_5                |
+| 39 |                        |                                | MinorMode_iDFTProgram         |
+| 40 |                        |                                | DLL_Period                    |
+| 41 |                        |                                | DLL_CodeChangeDelay           |
+| 42 |                        |                                | DLL_DcdlStep                  |
+| 43 |                        |                                | BumpReMapCA_0                 |
+| 44 |                        |                                | BumpReMapCS_2                 |
+| 45 |                        |                                | BumpReMapCS_0                 |
+| 46 |                        |                                | latencyMode                   |
+| 47 |                        |                                | PLL_NumCalClkCycles           |
+| 48 |                        |                                | csr_DQODT                     |
+| 49 |                        |                                | BumpReMapCS_3                 |
+| 50 |                        |                                | PLL_DisableHwCal              |
+| 51 |                        |                                | BumpReMapDMI_1                |
+| 52 |                        |                                | MinorMode_iRxDQVrefTrain      |
+| 53 |                        |                                | BumpReMapDQ0_4                |
+| 54 |                        |                                | DLL_OverSampleRate            |
+| 55 |                        |                                | DLL_UpdateLimit               |
+| 56 |                        |                                | BumpReMapDQS_1                |
+| 57 |                        |                                | BumpReMapDQ1_3                |
+| 58 |                        |                                | BumpReMapDBYTE_1              |
+| 59 |                        |                                | csr_CSODT                     |
+| 60 |                        |                                | MinorMode_iBumpReMap_En       |
+| 61 |                        |                                | MinorMode_iRetrainGateMode    |
+| 62 |                        |                                | DLL_DcdlStart                 |
++----+------------------------+--------------------------------+-------------------------------+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
++----+-------------------------------+-----------------------+--------------------------------+
+|    | FUNCTIONAL_SPEC               | FUNCTIONAL_MODE       | FUNCTIONAL_TEST                |
+|----+-------------------------------+-----------------------+--------------------------------|
+|  0 | MajorSystemMode               | DLL_UpdateLimit       | MinorMode_iRxTCTrain           |
+|  1 | MajorMode                     | DLL_EnablePeriodicCal | BumpReMapWCK_0                 |
+|  2 | dfi2ckratio                   | csr_DbiWr             | BumpReMapDQ1_7                 |
+|  3 | dfiperiod                     | csr_DMD               | BumpReMapDQ0_0                 |
+|  4 | wck2ckratio                   | MinorMode_iDFTProgram | BumpReMapDQ1_2                 |
+|  5 | EffectiveRL                   | csr_DbiRd             | BumpReMapDQ0_1                 |
+|  6 | EffectiveWL                   |                       | BumpReMapDQ0_3                 |
+|  7 | csr_WL                        |                       | MinorMode_iRxReadGateScheme    |
+|  8 | csr_nWR                       |                       | MinorMode_iDMITrainMode        |
+|  9 | csr_RL                        |                       | csr_RPST                       |
+| 10 | csr_WLS                       |                       | BumpReMapDQ0_5                 |
+| 11 | csr_DQODT                     |                       | MinorMode_iCSTEn               |
+| 12 | csr_CAODT                     |                       | BumpReMapWCK_1                 |
+| 13 | csr_CSODT                     |                       | BumpReMapDQ0_2                 |
+| 14 | MinorMode_iActiveRanks        |                       | BumpReMapDQ0_7                 |
+| 15 | MinorMode_iRetrainMode        |                       | BumpReMapDQ1_6                 |
+| 16 | MinorMode_iWdqsDriveMode      |                       | csr_PDDS                       |
+| 17 | MinorMode_iPLLCalMode         |                       | tWDQS_off                      |
+| 18 | PLL_DisableHwCal              |                       | BumpReMapDQ1_5                 |
+| 19 | PLL_NumCalClkCycles           |                       | BumpReMapCS_1                  |
+| 20 | MinorMode_iDLLCalibrationMode |                       | MinorMode_iPhyMstr_DRAM_Mode   |
+| 21 | DLL_Period                    |                       | MinorMode_iClkEnMode           |
+| 22 | DLL_OverSampleRate            |                       | tWDQS_on                       |
+| 23 | DLL_CodeChangeDelay           |                       | BumpReMapCA_2                  |
+| 24 | DLL_CommandWait               |                       | BumpReMapCK                    |
+| 25 | DLL_DcdlStart                 |                       | BumpReMapDQ1_0                 |
+| 26 | DLL_DcdlStep                  |                       | BumpReMapCA_5                  |
+| 27 | DLL_EnableUpdateLimit         |                       | BumpReMapDQ1_1                 |
+| 28 | BumpReMapCA_0                 |                       | BumpReMapCS_2                  |
+| 29 |                               |                       | BumpReMapDQS_0                 |
+| 30 |                               |                       | BumpReMapDBYTE_0               |
+| 31 |                               |                       | BumpReMapDQ1_4                 |
+| 32 |                               |                       | BumpReMapCS_0                  |
+| 33 |                               |                       | latencyMode                    |
+| 34 |                               |                       | csr_DQSIntervalTimerRunTime    |
+| 35 |                               |                       | BumpReMapDMI_0                 |
+| 36 |                               |                       | BumpReMapCA_1                  |
+| 37 |                               |                       | BumpReMapCS_3                  |
+| 38 |                               |                       | BumpReMapDMI_1                 |
+| 39 |                               |                       | MinorMode_iRxEnhancedTrainMode |
+| 40 |                               |                       | csr_BL                         |
+| 41 |                               |                       | BumpReMapDQS_1                 |
+| 42 |                               |                       | SimMode_iDisableDebugPrint     |
+| 43 |                               |                       | BumpReMapDQ1_3                 |
+| 44 |                               |                       | BumpReMapDBYTE_1               |
+| 45 |                               |                       | MinorMode_iBumpReMap_En        |
+| 46 |                               |                       | BumpReMapDQ0_6                 |
+| 47 |                               |                       | MinorMode_iRetrainGateMode     |
+| 48 |                               |                       | BumpReMapCA_3                  |
+| 49 |                               |                       | BumpReMapDQ0_4                 |
+| 50 |                               |                       | BumpReMapCA_4                  |
++----+-------------------------------+-----------------------+--------------------------------+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
++----+-------------------------------+-----------------------------+----------------------------------------+
+|    | FUNCTIONAL_SPEC               | FUNCTIONAL_MODE             | FUNCTIONAL_TEST                        |
+|----+-------------------------------+-----------------------------+----------------------------------------|
+|  0 | MajorSystemMode               | tWCKENL_FS                  | csr_RdqsPst                            |
+|  1 | MajorMode                     | csr_RdqsPre                 | tWCKPRE_Toggle_RD                      |
+|  2 | dfi2ckratio                   | csr_DbiWr                   | BumpReMapWCK_0                         |
+|  3 | dfiperiod                     | MinorMode_iRxReadGateScheme | BumpReMapDQ0_0                         |
+|  4 | wck2ckratio                   | csr_DMD                     | BumpReMapDQ1_7                         |
+|  5 | EffectiveRL                   | MinorMode_iDMITrainMode     | MinorMode_iWdqsDriveMode               |
+|  6 | EffectiveWL                   | csr_WCKMode                 | csr_WECC                               |
+|  7 | csr_WL                        | csr_DbiRd                   | BumpReMapDQ0_5                         |
+|  8 | csr_nWR                       |                             | MinorMode_iCSTEn                       |
+|  9 | csr_RL                        |                             | csr_CKR                                |
+| 10 | csr_WLS                       |                             | csr_WCK2DQIIntervalTimerRunTimeSetting |
+| 11 | csr_DQODT                     |                             | BumpReMapWCK_1                         |
+| 12 | csr_CAODT                     |                             | DLL_CommandWait                        |
+| 13 | csr_CSODT                     |                             | csr_WCK_ON                             |
+| 14 | MinorMode_iRetrainMode        |                             | BumpReMapCS_1                          |
+| 15 | MinorMode_iDLLCalibrationMode |                             | csr_WckPst                             |
+| 16 |                               |                             | BumpReMapCA_2                          |
+| 17 |                               |                             | BumpReMapCK                            |
+| 18 |                               |                             | BumpReMapDQ1_0                         |
+| 19 |                               |                             | csr_RECC                               |
+| 20 |                               |                             | BumpReMapCA_5                          |
+| 21 |                               |                             | BumpReMapDQ1_1                         |
+| 22 |                               |                             | BumpReMapDQS_0                         |
+| 23 |                               |                             | BumpReMapDBYTE_0                       |
+| 24 |                               |                             | BumpReMapDQ1_4                         |
+| 25 |                               |                             | BumpReMapDMI_0                         |
+| 26 |                               |                             | BumpReMapCA_1                          |
+| 27 |                               |                             | tWCKENL_WR                             |
+| 28 |                               |                             | SimMode_iDisableDebugPrint             |
+| 29 |                               |                             | BumpReMapDQ0_6                         |
+| 30 |                               |                             | BumpReMapCA_3                          |
+| 31 |                               |                             | BumpReMapCA_4                          |
+| 32 |                               |                             | MinorMode_iRxTCTrain                   |
+| 33 |                               |                             | DLL_EnableUpdateLimit                  |
+| 34 |                               |                             | tWCKPRE_Static                         |
+| 35 |                               |                             | BumpReMapDQ1_2                         |
+| 36 |                               |                             | BumpReMapDQ0_1                         |
+| 37 |                               |                             | DLL_EnablePeriodicCal                  |
+| 38 |                               |                             | BumpReMapDQ0_3                         |
+| 39 |                               |                             | csr_WCK2DQOIntervalTimerRunTimeSetting |
+| 40 |                               |                             | csr_DVFSC                              |
+| 41 |                               |                             | tWCKENL_RD                             |
+| 42 |                               |                             | BumpReMapDQ0_2                         |
+| 43 |                               |                             | BumpReMapDQ0_7                         |
+| 44 |                               |                             | BumpReMapDQ1_6                         |
+| 45 |                               |                             | MinorMode_iPLLCalMode                  |
+| 46 |                               |                             | BumpReMapDQ1_5                         |
+| 47 |                               |                             | MinorMode_iPhyMstr_DRAM_Mode           |
+| 48 |                               |                             | MinorMode_iDFTProgram                  |
+| 49 |                               |                             | BumpReMapCA_6                          |
+| 50 |                               |                             | MinorMode_iClkEnMode                   |
+| 51 |                               |                             | tWCKPST                                |
+| 52 |                               |                             | csr_BkOrg                              |
+| 53 |                               |                             | DLL_Period                             |
+| 54 |                               |                             | DLL_CodeChangeDelay                    |
+| 55 |                               |                             | MinorMode_iActiveRanks                 |
+| 56 |                               |                             | DLL_DcdlStep                           |
+| 57 |                               |                             | BumpReMapCA_0                          |
+| 58 |                               |                             | BumpReMapCS_2                          |
+| 59 |                               |                             | tWCKPRE_Toggle_FS                      |
+| 60 |                               |                             | csr_WCK_FM                             |
+| 61 |                               |                             | BumpReMapCS_0                          |
+| 62 |                               |                             | latencyMode                            |
+| 63 |                               |                             | PLL_NumCalClkCycles                    |
+| 64 |                               |                             | BumpReMapCS_3                          |
+| 65 |                               |                             | PLL_DisableHwCal                       |
+| 66 |                               |                             | BumpReMapDMI_1                         |
+| 67 |                               |                             | MinorMode_iRxEnhancedTrainMode         |
+| 68 |                               |                             | BumpReMapDQ0_4                         |
+| 69 |                               |                             | csr_RpstMode                           |
+| 70 |                               |                             | DLL_OverSampleRate                     |
+| 71 |                               |                             | DLL_UpdateLimit                        |
+| 72 |                               |                             | BumpReMapDQS_1                         |
+| 73 |                               |                             | BumpReMapDQ1_3                         |
+| 74 |                               |                             | BumpReMapDBYTE_1                       |
+| 75 |                               |                             | MinorMode_iBumpReMap_En                |
+| 76 |                               |                             | csr_CkMode                             |
+| 77 |                               |                             | MinorMode_iRetrainGateMode             |
+| 78 |                               |                             | tWCKPRE_Toggle_WR                      |
+| 79 |                               |                             | DLL_DcdlStart                          |
++----+-------------------------------+-----------------------------+----------------------------------------+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
++----+------------------------+--------------------------------+-------------------------------+
+|    | FUNCTIONAL_SPEC        | FUNCTIONAL_MODE                | FUNCTIONAL_TEST               |
+|----+------------------------+--------------------------------+-------------------------------|
+|  0 | MajorSystemMode        | MinorMode_iRxTCTrain           | BumpReMapWCK_0                |
+|  1 | MajorMode              | MinorMode_iRxEnhancedTrainMode | BumpReMapDQ0_0                |
+|  2 | dfi2ckratio            | csr_DbiWr                      | BumpReMapDQ1_7                |
+|  3 | dfiperiod              | MinorMode_iPhyMstr_DRAM_Mode   | csr_CAODT                     |
+|  4 | wck2ckratio            | csr_DMD                        | MinorMode_iWdqsDriveMode      |
+|  5 | EffectiveRL            | MinorMode_iClkEnMode           | MinorMode_iRxReadGateScheme   |
+|  6 | EffectiveWL            | MinorMode_iCSTEn               | MinorMode_iDMITrainMode       |
+|  7 | csr_WL                 | csr_DbiRd                      | BumpReMapDQ0_5                |
+|  8 | csr_nWR                |                                | BumpReMapWCK_1                |
+|  9 | csr_RL                 |                                | DLL_CommandWait               |
+| 10 | csr_WLS                |                                | csr_PDDS                      |
+| 11 | tWDQS_on               |                                | BumpReMapCS_1                 |
+| 12 | tWDQS_off              |                                | BumpReMapCA_2                 |
+| 13 | csr_BL                 |                                | BumpReMapCK                   |
+| 14 | csr_RPST               |                                | BumpReMapDQ1_0                |
+| 15 | MinorMode_iActiveRanks |                                | BumpReMapCA_5                 |
+| 16 |                        |                                | BumpReMapDQ1_1                |
+| 17 |                        |                                | BumpReMapDQS_0                |
+| 18 |                        |                                | BumpReMapDBYTE_0              |
+| 19 |                        |                                | BumpReMapDQ1_4                |
+| 20 |                        |                                | MinorMode_iDLLCalibrationMode |
+| 21 |                        |                                | csr_DQSIntervalTimerRunTime   |
+| 22 |                        |                                | BumpReMapDMI_0                |
+| 23 |                        |                                | BumpReMapCA_1                 |
+| 24 |                        |                                | MinorMode_iRetrainMode        |
+| 25 |                        |                                | SimMode_iDisableDebugPrint    |
+| 26 |                        |                                | BumpReMapDQ0_6                |
+| 27 |                        |                                | BumpReMapCA_3                 |
+| 28 |                        |                                | BumpReMapCA_4                 |
+| 29 |                        |                                | DLL_EnableUpdateLimit         |
+| 30 |                        |                                | BumpReMapDQ1_2                |
+| 31 |                        |                                | BumpReMapDQ0_1                |
+| 32 |                        |                                | DLL_EnablePeriodicCal         |
+| 33 |                        |                                | BumpReMapDQ0_3                |
+| 34 |                        |                                | BumpReMapDQ0_2                |
+| 35 |                        |                                | BumpReMapDQ0_7                |
+| 36 |                        |                                | BumpReMapDQ1_6                |
+| 37 |                        |                                | MinorMode_iClkGatingMode      |
+| 38 |                        |                                | MinorMode_iPLLCalMode         |
+| 39 |                        |                                | BumpReMapDQ1_5                |
+| 40 |                        |                                | MinorMode_iDFTProgram         |
+| 41 |                        |                                | DLL_Period                    |
+| 42 |                        |                                | DLL_CodeChangeDelay           |
+| 43 |                        |                                | DLL_DcdlStep                  |
+| 44 |                        |                                | BumpReMapCA_0                 |
+| 45 |                        |                                | BumpReMapCS_2                 |
+| 46 |                        |                                | BumpReMapCS_0                 |
+| 47 |                        |                                | latencyMode                   |
+| 48 |                        |                                | PLL_NumCalClkCycles           |
+| 49 |                        |                                | csr_DQODT                     |
+| 50 |                        |                                | MinorMode_iCalibrationMode    |
+| 51 |                        |                                | PLL_DisableHwCal              |
+| 52 |                        |                                | BumpReMapCS_3                 |
+| 53 |                        |                                | BumpReMapDMI_1                |
+| 54 |                        |                                | BumpReMapDQ0_4                |
+| 55 |                        |                                | DLL_OverSampleRate            |
+| 56 |                        |                                | DLL_UpdateLimit               |
+| 57 |                        |                                | BumpReMapDQS_1                |
+| 58 |                        |                                | BumpReMapDQ1_3                |
+| 59 |                        |                                | BumpReMapDBYTE_1              |
+| 60 |                        |                                | csr_CSODT                     |
+| 61 |                        |                                | MinorMode_iBumpReMap_En       |
+| 62 |                        |                                | MinorMode_iRetrainGateMode    |
+| 63 |                        |                                | DLL_DcdlStart                 |
++----+------------------------+--------------------------------+-------------------------------+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
++----+------------------------+--------------------------------+-------------------------------+
+|    | FUNCTIONAL_SPEC        | FUNCTIONAL_MODE                | FUNCTIONAL_TEST               |
+|----+------------------------+--------------------------------+-------------------------------|
+|  0 | MajorSystemMode        | MinorMode_iRxTCTrain           | BumpReMapWCK_0                |
+|  1 | MajorMode              | MinorMode_iRxEnhancedTrainMode | BumpReMapDQ0_0                |
+|  2 | dfi2ckratio            | csr_DbiWr                      | BumpReMapDQ1_7                |
+|  3 | dfiperiod              | MinorMode_iPhyMstr_DRAM_Mode   | csr_CAODT                     |
+|  4 | wck2ckratio            | csr_DMD                        | MinorMode_iWdqsDriveMode      |
+|  5 | EffectiveRL            | MinorMode_iClkEnMode           | MinorMode_iRxReadGateScheme   |
+|  6 | EffectiveWL            | MinorMode_iCSTEn               | MinorMode_iDMITrainMode       |
+|  7 | csr_WL                 | csr_DbiRd                      | BumpReMapDQ0_5                |
+|  8 | csr_nWR                |                                | BumpReMapWCK_1                |
+|  9 | csr_RL                 |                                | DLL_CommandWait               |
+| 10 | csr_WLS                |                                | csr_PDDS                      |
+| 11 | tWDQS_on               |                                | BumpReMapCS_1                 |
+| 12 | tWDQS_off              |                                | BumpReMapCA_2                 |
+| 13 | csr_BL                 |                                | BumpReMapCK                   |
+| 14 | csr_RPST               |                                | BumpReMapDQ1_0                |
+| 15 | MinorMode_iActiveRanks |                                | BumpReMapCA_5                 |
+| 16 |                        |                                | BumpReMapDQ1_1                |
+| 17 |                        |                                | BumpReMapDQS_0                |
+| 18 |                        |                                | BumpReMapDBYTE_0              |
+| 19 |                        |                                | BumpReMapDQ1_4                |
+| 20 |                        |                                | MinorMode_iDLLCalibrationMode |
+| 21 |                        |                                | csr_DQSIntervalTimerRunTime   |
+| 22 |                        |                                | BumpReMapDMI_0                |
+| 23 |                        |                                | BumpReMapCA_1                 |
+| 24 |                        |                                | MinorMode_iRetrainMode        |
+| 25 |                        |                                | SimMode_iDisableDebugPrint    |
+| 26 |                        |                                | BumpReMapDQ0_6                |
+| 27 |                        |                                | BumpReMapCA_3                 |
+| 28 |                        |                                | BumpReMapCA_4                 |
+| 29 |                        |                                | DLL_EnableUpdateLimit         |
+| 30 |                        |                                | BumpReMapDQ1_2                |
+| 31 |                        |                                | BumpReMapDQ0_1                |
+| 32 |                        |                                | DLL_EnablePeriodicCal         |
+| 33 |                        |                                | BumpReMapDQ0_3                |
+| 34 |                        |                                | BumpReMapDQ0_2                |
+| 35 |                        |                                | BumpReMapDQ0_7                |
+| 36 |                        |                                | BumpReMapDQ1_6                |
+| 37 |                        |                                | MinorMode_iClkGatingMode      |
+| 38 |                        |                                | MinorMode_iPLLCalMode         |
+| 39 |                        |                                | BumpReMapDQ1_5                |
+| 40 |                        |                                | MinorMode_iDFTProgram         |
+| 41 |                        |                                | DLL_Period                    |
+| 42 |                        |                                | DLL_CodeChangeDelay           |
+| 43 |                        |                                | DLL_DcdlStep                  |
+| 44 |                        |                                | BumpReMapCA_0                 |
+| 45 |                        |                                | BumpReMapCS_2                 |
+| 46 |                        |                                | BumpReMapCS_0                 |
+| 47 |                        |                                | latencyMode                   |
+| 48 |                        |                                | PLL_NumCalClkCycles           |
+| 49 |                        |                                | csr_DQODT                     |
+| 50 |                        |                                | MinorMode_iCalibrationMode    |
+| 51 |                        |                                | PLL_DisableHwCal              |
+| 52 |                        |                                | BumpReMapCS_3                 |
+| 53 |                        |                                | BumpReMapDMI_1                |
+| 54 |                        |                                | BumpReMapDQ0_4                |
+| 55 |                        |                                | DLL_OverSampleRate            |
+| 56 |                        |                                | DLL_UpdateLimit               |
+| 57 |                        |                                | BumpReMapDQS_1                |
+| 58 |                        |                                | BumpReMapDQ1_3                |
+| 59 |                        |                                | BumpReMapDBYTE_1              |
+| 60 |                        |                                | csr_CSODT                     |
+| 61 |                        |                                | MinorMode_iBumpReMap_En       |
+| 62 |                        |                                | MinorMode_iRetrainGateMode    |
+| 63 |                        |                                | DLL_DcdlStart                 |
++----+------------------------+--------------------------------+-------------------------------+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
++----+------------------------+--------------------------------+-------------------------------+
+|    | FUNCTIONAL_SPEC        | FUNCTIONAL_MODE                | FUNCTIONAL_TEST               |
+|----+------------------------+--------------------------------+-------------------------------|
+|  0 | MajorSystemMode        | MinorMode_iRxTCTrain           | BumpReMapWCK_0                |
+|  1 | MajorMode              | MinorMode_iRxEnhancedTrainMode | BumpReMapDQ0_0                |
+|  2 | dfi2ckratio            | csr_DbiWr                      | BumpReMapDQ1_7                |
+|  3 | dfiperiod              | MinorMode_iPhyMstr_DRAM_Mode   | csr_CAODT                     |
+|  4 | wck2ckratio            | csr_DMD                        | MinorMode_iWdqsDriveMode      |
+|  5 | EffectiveRL            | MinorMode_iClkEnMode           | MinorMode_iRxReadGateScheme   |
+|  6 | EffectiveWL            | MinorMode_iCSTEn               | MinorMode_iDMITrainMode       |
+|  7 | csr_WL                 | csr_DbiRd                      | BumpReMapDQ0_5                |
+|  8 | csr_nWR                |                                | BumpReMapWCK_1                |
+|  9 | csr_RL                 |                                | DLL_CommandWait               |
+| 10 | csr_WLS                |                                | csr_PDDS                      |
+| 11 | tWDQS_on               |                                | BumpReMapCS_1                 |
+| 12 | tWDQS_off              |                                | BumpReMapCA_2                 |
+| 13 | csr_BL                 |                                | BumpReMapCK                   |
+| 14 | csr_RPST               |                                | BumpReMapDQ1_0                |
+| 15 | MinorMode_iActiveRanks |                                | BumpReMapCA_5                 |
+| 16 |                        |                                | BumpReMapDQ1_1                |
+| 17 |                        |                                | BumpReMapDQS_0                |
+| 18 |                        |                                | BumpReMapDBYTE_0              |
+| 19 |                        |                                | BumpReMapDQ1_4                |
+| 20 |                        |                                | MinorMode_iDLLCalibrationMode |
+| 21 |                        |                                | csr_DQSIntervalTimerRunTime   |
+| 22 |                        |                                | BumpReMapDMI_0                |
+| 23 |                        |                                | BumpReMapCA_1                 |
+| 24 |                        |                                | MinorMode_iRetrainMode        |
+| 25 |                        |                                | SimMode_iDisableDebugPrint    |
+| 26 |                        |                                | BumpReMapDQ0_6                |
+| 27 |                        |                                | BumpReMapCA_3                 |
+| 28 |                        |                                | BumpReMapCA_4                 |
+| 29 |                        |                                | DLL_EnableUpdateLimit         |
+| 30 |                        |                                | BumpReMapDQ1_2                |
+| 31 |                        |                                | BumpReMapDQ0_1                |
+| 32 |                        |                                | DLL_EnablePeriodicCal         |
+| 33 |                        |                                | BumpReMapDQ0_3                |
+| 34 |                        |                                | BumpReMapDQ0_2                |
+| 35 |                        |                                | BumpReMapDQ0_7                |
+| 36 |                        |                                | BumpReMapDQ1_6                |
+| 37 |                        |                                | MinorMode_iClkGatingMode      |
+| 38 |                        |                                | MinorMode_iPLLCalMode         |
+| 39 |                        |                                | BumpReMapDQ1_5                |
+| 40 |                        |                                | MinorMode_iDFTProgram         |
+| 41 |                        |                                | DLL_Period                    |
+| 42 |                        |                                | DLL_CodeChangeDelay           |
+| 43 |                        |                                | DLL_DcdlStep                  |
+| 44 |                        |                                | BumpReMapCA_0                 |
+| 45 |                        |                                | BumpReMapCS_2                 |
+| 46 |                        |                                | BumpReMapCS_0                 |
+| 47 |                        |                                | latencyMode                   |
+| 48 |                        |                                | PLL_NumCalClkCycles           |
+| 49 |                        |                                | csr_DQODT                     |
+| 50 |                        |                                | MinorMode_iCalibrationMode    |
+| 51 |                        |                                | PLL_DisableHwCal              |
+| 52 |                        |                                | BumpReMapCS_3                 |
+| 53 |                        |                                | BumpReMapDMI_1                |
+| 54 |                        |                                | BumpReMapDQ0_4                |
+| 55 |                        |                                | DLL_OverSampleRate            |
+| 56 |                        |                                | DLL_UpdateLimit               |
+| 57 |                        |                                | BumpReMapDQS_1                |
+| 58 |                        |                                | BumpReMapDQ1_3                |
+| 59 |                        |                                | BumpReMapDBYTE_1              |
+| 60 |                        |                                | csr_CSODT                     |
+| 61 |                        |                                | MinorMode_iBumpReMap_En       |
+| 62 |                        |                                | MinorMode_iRetrainGateMode    |
+| 63 |                        |                                | DLL_DcdlStart                 |
++----+------------------------+--------------------------------+-------------------------------+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
++----+------------------------+--------------------------------+-------------------------------+
+|    | FUNCTIONAL_SPEC        | FUNCTIONAL_MODE                | FUNCTIONAL_TEST               |
+|----+------------------------+--------------------------------+-------------------------------|
+|  0 | MajorSystemMode        | MinorMode_iRxTCTrain           | BumpReMapWCK_0                |
+|  1 | MajorMode              | MinorMode_iRxEnhancedTrainMode | BumpReMapDQ0_0                |
+|  2 | dfi2ckratio            | csr_DbiWr                      | BumpReMapDQ1_7                |
+|  3 | dfiperiod              | MinorMode_iPhyMstr_DRAM_Mode   | csr_CAODT                     |
+|  4 | wck2ckratio            | csr_DMD                        | MinorMode_iWdqsDriveMode      |
+|  5 | EffectiveRL            | MinorMode_iClkEnMode           | MinorMode_iRxReadGateScheme   |
+|  6 | EffectiveWL            | MinorMode_iCSTEn               | MinorMode_iDMITrainMode       |
+|  7 | csr_WL                 | csr_DbiRd                      | BumpReMapDQ0_5                |
+|  8 | csr_nWR                |                                | BumpReMapWCK_1                |
+|  9 | csr_RL                 |                                | DLL_CommandWait               |
+| 10 | csr_WLS                |                                | csr_PDDS                      |
+| 11 | tWDQS_on               |                                | BumpReMapCS_1                 |
+| 12 | tWDQS_off              |                                | BumpReMapCA_2                 |
+| 13 | csr_BL                 |                                | BumpReMapCK                   |
+| 14 | csr_RPST               |                                | BumpReMapDQ1_0                |
+| 15 | MinorMode_iActiveRanks |                                | BumpReMapCA_5                 |
+| 16 |                        |                                | BumpReMapDQ1_1                |
+| 17 |                        |                                | BumpReMapDQS_0                |
+| 18 |                        |                                | BumpReMapDBYTE_0              |
+| 19 |                        |                                | BumpReMapDQ1_4                |
+| 20 |                        |                                | MinorMode_iDLLCalibrationMode |
+| 21 |                        |                                | csr_DQSIntervalTimerRunTime   |
+| 22 |                        |                                | BumpReMapDMI_0                |
+| 23 |                        |                                | BumpReMapCA_1                 |
+| 24 |                        |                                | MinorMode_iRetrainMode        |
+| 25 |                        |                                | SimMode_iDisableDebugPrint    |
+| 26 |                        |                                | BumpReMapDQ0_6                |
+| 27 |                        |                                | BumpReMapCA_3                 |
+| 28 |                        |                                | BumpReMapCA_4                 |
+| 29 |                        |                                | DLL_EnableUpdateLimit         |
+| 30 |                        |                                | BumpReMapDQ1_2                |
+| 31 |                        |                                | BumpReMapDQ0_1                |
+| 32 |                        |                                | DLL_EnablePeriodicCal         |
+| 33 |                        |                                | BumpReMapDQ0_3                |
+| 34 |                        |                                | BumpReMapDQ0_2                |
+| 35 |                        |                                | BumpReMapDQ0_7                |
+| 36 |                        |                                | BumpReMapDQ1_6                |
+| 37 |                        |                                | MinorMode_iClkGatingMode      |
+| 38 |                        |                                | MinorMode_iPLLCalMode         |
+| 39 |                        |                                | BumpReMapDQ1_5                |
+| 40 |                        |                                | MinorMode_iDFTProgram         |
+| 41 |                        |                                | DLL_Period                    |
+| 42 |                        |                                | DLL_CodeChangeDelay           |
+| 43 |                        |                                | DLL_DcdlStep                  |
+| 44 |                        |                                | BumpReMapCA_0                 |
+| 45 |                        |                                | BumpReMapCS_2                 |
+| 46 |                        |                                | BumpReMapCS_0                 |
+| 47 |                        |                                | latencyMode                   |
+| 48 |                        |                                | PLL_NumCalClkCycles           |
+| 49 |                        |                                | csr_DQODT                     |
+| 50 |                        |                                | MinorMode_iCalibrationMode    |
+| 51 |                        |                                | PLL_DisableHwCal              |
+| 52 |                        |                                | BumpReMapCS_3                 |
+| 53 |                        |                                | BumpReMapDMI_1                |
+| 54 |                        |                                | BumpReMapDQ0_4                |
+| 55 |                        |                                | DLL_OverSampleRate            |
+| 56 |                        |                                | DLL_UpdateLimit               |
+| 57 |                        |                                | BumpReMapDQS_1                |
+| 58 |                        |                                | BumpReMapDQ1_3                |
+| 59 |                        |                                | BumpReMapDBYTE_1              |
+| 60 |                        |                                | csr_CSODT                     |
+| 61 |                        |                                | MinorMode_iBumpReMap_En       |
+| 62 |                        |                                | MinorMode_iRetrainGateMode    |
+| 63 |                        |                                | DLL_DcdlStart                 |
++----+------------------------+--------------------------------+-------------------------------+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
++----+-------------------------------+-------------------+----------------------------------------+
+|    | FUNCTIONAL_SPEC               | FUNCTIONAL_MODE   | FUNCTIONAL_TEST                        |
+|----+-------------------------------+-------------------+----------------------------------------|
+|  0 | MajorSystemMode               | csr_DMD           | MinorMode_iRxTCTrain                   |
+|  1 | MajorMode                     | csr_DbiRd         | csr_RdqsPst                            |
+|  2 | dfi2ckratio                   | csr_DbiWr         | tWCKPRE_Toggle_RD                      |
+|  3 | dfiperiod                     |                   | DLL_EnableUpdateLimit                  |
+|  4 | wck2ckratio                   |                   | tWCKPRE_Static                         |
+|  5 | EffectiveRL                   |                   | DLL_EnablePeriodicCal                  |
+|  6 | EffectiveWL                   |                   | MinorMode_iWdqsDriveMode               |
+|  7 | csr_WL                        |                   | MinorMode_iRxReadGateScheme            |
+|  8 | csr_nWR                       |                   | MinorMode_iDMITrainMode                |
+|  9 | csr_RL                        |                   | csr_WECC                               |
+| 10 | csr_WLS                       |                   | MinorMode_iCSTEn                       |
+| 11 | csr_DQODT                     |                   | csr_CKR                                |
+| 12 | csr_CAODT                     |                   | csr_WCK2DQIIntervalTimerRunTimeSetting |
+| 13 | csr_CSODT                     |                   | csr_WCKMode                            |
+| 14 | MinorMode_iRetrainMode        |                   | csr_WCK2DQOIntervalTimerRunTimeSetting |
+| 15 | MinorMode_iDLLCalibrationMode |                   | csr_DVFSC                              |
+| 16 |                               |                   | tWCKENL_RD                             |
+| 17 |                               |                   | DLL_CommandWait                        |
+| 18 |                               |                   | tWCKENL_FS                             |
+| 19 |                               |                   | csr_WCK_ON                             |
+| 20 |                               |                   | MinorMode_iClkGatingMode               |
+| 21 |                               |                   | MinorMode_iPLLCalMode                  |
+| 22 |                               |                   | csr_WckPst                             |
+| 23 |                               |                   | MinorMode_iPhyMstr_DRAM_Mode           |
+| 24 |                               |                   | MinorMode_iDFTProgram                  |
+| 25 |                               |                   | MinorMode_iClkEnMode                   |
+| 26 |                               |                   | tWCKPST                                |
+| 27 |                               |                   | DLL_Period                             |
+| 28 |                               |                   | csr_BkOrg                              |
+| 29 |                               |                   | MinorMode_iActiveRanks                 |
+| 30 |                               |                   | DLL_CodeChangeDelay                    |
+| 31 |                               |                   | DLL_DcdlStep                           |
+| 32 |                               |                   | csr_RECC                               |
+| 33 |                               |                   | tWCKPRE_Toggle_FS                      |
+| 34 |                               |                   | csr_WCK_FM                             |
+| 35 |                               |                   | latencyMode                            |
+| 36 |                               |                   | PLL_NumCalClkCycles                    |
+| 37 |                               |                   | MinorMode_iCalibrationMode             |
+| 38 |                               |                   | PLL_DisableHwCal                       |
+| 39 |                               |                   | MinorMode_iRxEnhancedTrainMode         |
+| 40 |                               |                   | tWCKENL_WR                             |
+| 41 |                               |                   | csr_RpstMode                           |
+| 42 |                               |                   | DLL_OverSampleRate                     |
+| 43 |                               |                   | SimMode_iDisableDebugPrint             |
+| 44 |                               |                   | DLL_UpdateLimit                        |
+| 45 |                               |                   | csr_RdqsPre                            |
+| 46 |                               |                   | MinorMode_iBumpReMap_En                |
+| 47 |                               |                   | csr_CkMode                             |
+| 48 |                               |                   | MinorMode_iRetrainGateMode             |
+| 49 |                               |                   | tWCKPRE_Toggle_WR                      |
+| 50 |                               |                   | DLL_DcdlStart                          |
++----+-------------------------------+-------------------+----------------------------------------+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
++----+-------------------------------+-------------------+----------------------------------------+
+|    | FUNCTIONAL_SPEC               | FUNCTIONAL_MODE   | FUNCTIONAL_TEST                        |
+|----+-------------------------------+-------------------+----------------------------------------|
+|  0 | MajorSystemMode               | csr_DMD           | MinorMode_iRxTCTrain                   |
+|  1 | MajorMode                     | csr_DbiRd         | csr_RdqsPst                            |
+|  2 | dfi2ckratio                   | csr_DbiWr         | tWCKPRE_Toggle_RD                      |
+|  3 | dfiperiod                     |                   | DLL_EnableUpdateLimit                  |
+|  4 | wck2ckratio                   |                   | tWCKPRE_Static                         |
+|  5 | EffectiveRL                   |                   | DLL_EnablePeriodicCal                  |
+|  6 | EffectiveWL                   |                   | MinorMode_iWdqsDriveMode               |
+|  7 | csr_WL                        |                   | MinorMode_iRxReadGateScheme            |
+|  8 | csr_nWR                       |                   | MinorMode_iDMITrainMode                |
+|  9 | csr_RL                        |                   | csr_WECC                               |
+| 10 | csr_WLS                       |                   | MinorMode_iCSTEn                       |
+| 11 | csr_DQODT                     |                   | csr_CKR                                |
+| 12 | csr_CAODT                     |                   | csr_WCK2DQIIntervalTimerRunTimeSetting |
+| 13 | csr_CSODT                     |                   | csr_WCKMode                            |
+| 14 | MinorMode_iRetrainMode        |                   | csr_WCK2DQOIntervalTimerRunTimeSetting |
+| 15 | MinorMode_iDLLCalibrationMode |                   | csr_DVFSC                              |
+| 16 |                               |                   | tWCKENL_RD                             |
+| 17 |                               |                   | DLL_CommandWait                        |
+| 18 |                               |                   | tWCKENL_FS                             |
+| 19 |                               |                   | csr_WCK_ON                             |
+| 20 |                               |                   | MinorMode_iClkGatingMode               |
+| 21 |                               |                   | MinorMode_iPLLCalMode                  |
+| 22 |                               |                   | csr_WckPst                             |
+| 23 |                               |                   | MinorMode_iPhyMstr_DRAM_Mode           |
+| 24 |                               |                   | MinorMode_iDFTProgram                  |
+| 25 |                               |                   | MinorMode_iClkEnMode                   |
+| 26 |                               |                   | tWCKPST                                |
+| 27 |                               |                   | DLL_Period                             |
+| 28 |                               |                   | csr_BkOrg                              |
+| 29 |                               |                   | MinorMode_iActiveRanks                 |
+| 30 |                               |                   | DLL_CodeChangeDelay                    |
+| 31 |                               |                   | DLL_DcdlStep                           |
+| 32 |                               |                   | csr_RECC                               |
+| 33 |                               |                   | tWCKPRE_Toggle_FS                      |
+| 34 |                               |                   | csr_WCK_FM                             |
+| 35 |                               |                   | latencyMode                            |
+| 36 |                               |                   | PLL_NumCalClkCycles                    |
+| 37 |                               |                   | MinorMode_iCalibrationMode             |
+| 38 |                               |                   | PLL_DisableHwCal                       |
+| 39 |                               |                   | MinorMode_iRxEnhancedTrainMode         |
+| 40 |                               |                   | tWCKENL_WR                             |
+| 41 |                               |                   | csr_RpstMode                           |
+| 42 |                               |                   | DLL_OverSampleRate                     |
+| 43 |                               |                   | SimMode_iDisableDebugPrint             |
+| 44 |                               |                   | DLL_UpdateLimit                        |
+| 45 |                               |                   | csr_RdqsPre                            |
+| 46 |                               |                   | MinorMode_iBumpReMap_En                |
+| 47 |                               |                   | csr_CkMode                             |
+| 48 |                               |                   | MinorMode_iRetrainGateMode             |
+| 49 |                               |                   | tWCKPRE_Toggle_WR                      |
+| 50 |                               |                   | DLL_DcdlStart                          |
++----+-------------------------------+-------------------+----------------------------------------+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
++----+-------------------------------+-------------------+----------------------------------------+
+|    | FUNCTIONAL_SPEC               | FUNCTIONAL_MODE   | FUNCTIONAL_TEST                        |
+|----+-------------------------------+-------------------+----------------------------------------|
+|  0 | MajorSystemMode               | csr_DMD           | MinorMode_iRxTCTrain                   |
+|  1 | MajorMode                     | csr_DbiRd         | csr_RdqsPst                            |
+|  2 | dfi2ckratio                   | csr_DbiWr         | tWCKPRE_Toggle_RD                      |
+|  3 | dfiperiod                     |                   | DLL_EnableUpdateLimit                  |
+|  4 | wck2ckratio                   |                   | tWCKPRE_Static                         |
+|  5 | EffectiveRL                   |                   | DLL_EnablePeriodicCal                  |
+|  6 | EffectiveWL                   |                   | MinorMode_iWdqsDriveMode               |
+|  7 | csr_WL                        |                   | MinorMode_iRxReadGateScheme            |
+|  8 | csr_nWR                       |                   | MinorMode_iDMITrainMode                |
+|  9 | csr_RL                        |                   | csr_WECC                               |
+| 10 | csr_WLS                       |                   | MinorMode_iCSTEn                       |
+| 11 | csr_DQODT                     |                   | csr_CKR                                |
+| 12 | csr_CAODT                     |                   | csr_WCK2DQIIntervalTimerRunTimeSetting |
+| 13 | csr_CSODT                     |                   | csr_WCKMode                            |
+| 14 | MinorMode_iRetrainMode        |                   | csr_WCK2DQOIntervalTimerRunTimeSetting |
+| 15 | MinorMode_iDLLCalibrationMode |                   | csr_DVFSC                              |
+| 16 |                               |                   | tWCKENL_RD                             |
+| 17 |                               |                   | DLL_CommandWait                        |
+| 18 |                               |                   | tWCKENL_FS                             |
+| 19 |                               |                   | csr_WCK_ON                             |
+| 20 |                               |                   | MinorMode_iClkGatingMode               |
+| 21 |                               |                   | MinorMode_iPLLCalMode                  |
+| 22 |                               |                   | csr_WckPst                             |
+| 23 |                               |                   | MinorMode_iPhyMstr_DRAM_Mode           |
+| 24 |                               |                   | MinorMode_iDFTProgram                  |
+| 25 |                               |                   | MinorMode_iClkEnMode                   |
+| 26 |                               |                   | tWCKPST                                |
+| 27 |                               |                   | DLL_Period                             |
+| 28 |                               |                   | csr_BkOrg                              |
+| 29 |                               |                   | MinorMode_iActiveRanks                 |
+| 30 |                               |                   | DLL_CodeChangeDelay                    |
+| 31 |                               |                   | DLL_DcdlStep                           |
+| 32 |                               |                   | csr_RECC                               |
+| 33 |                               |                   | tWCKPRE_Toggle_FS                      |
+| 34 |                               |                   | csr_WCK_FM                             |
+| 35 |                               |                   | latencyMode                            |
+| 36 |                               |                   | PLL_NumCalClkCycles                    |
+| 37 |                               |                   | MinorMode_iCalibrationMode             |
+| 38 |                               |                   | PLL_DisableHwCal                       |
+| 39 |                               |                   | MinorMode_iRxEnhancedTrainMode         |
+| 40 |                               |                   | tWCKENL_WR                             |
+| 41 |                               |                   | csr_RpstMode                           |
+| 42 |                               |                   | DLL_OverSampleRate                     |
+| 43 |                               |                   | SimMode_iDisableDebugPrint             |
+| 44 |                               |                   | DLL_UpdateLimit                        |
+| 45 |                               |                   | csr_RdqsPre                            |
+| 46 |                               |                   | MinorMode_iBumpReMap_En                |
+| 47 |                               |                   | csr_CkMode                             |
+| 48 |                               |                   | MinorMode_iRetrainGateMode             |
+| 49 |                               |                   | tWCKPRE_Toggle_WR                      |
+| 50 |                               |                   | DLL_DcdlStart                          |
++----+-------------------------------+-------------------+----------------------------------------+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 3
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 2
+ baud: 2400 
+
+protocol: 4
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 4
+ baud: 2400 
+
+protocol: 5
+ phy_cfg: 8
+ mode: FUNCTIONAL_TEST
+ dfi2ckratio: 0
+ baud: 2400 
+
