@@ -1,0 +1,135 @@
+
+#########################################################################################
+#                       CFG: 8 LP: 4 BAUD: 2400 MD: 8 DFI: 2
+#########################################################################################
+MajorSystemMode = LP4
+MajorMode = 8
+dfi2ckratio = 1
+dfiperiod = 1506
+wck2ckratio = 1
+EffectiveRL = 30
+EffectiveWL = 22
+csr_WL = 4
+csr_nWR = 4
+csr_RL = 4
+csr_WLS = 1
+tWDQS_on = 14
+tWDQS_off = 37
+csr_BL = 2
+csr_RPST = 1
+MinorMode_iActiveRanks = 2
+
+
+#########################################################################################
+#                       CFG: 8 LP: 4 BAUD: 2400 MD: 8 DFI: 2 FUNCTIONAL_MODE
+#########################################################################################
+MajorSystemMode = LP4
+MajorMode = 8
+dfi2ckratio = 1
+dfiperiod = 1506
+wck2ckratio = 1
+EffectiveRL = 30
+EffectiveWL = 22
+csr_WL = 4
+csr_nWR = 4
+csr_RL = 4
+csr_WLS = 1
+csr_DbiWr = 0
+csr_DbiRd = 1
+csr_DMD = 0
+tWDQS_on = 14
+tWDQS_off = 37
+csr_BL = 2
+csr_RPST = 1
+MinorMode_iActiveRanks = 2
+MinorMode_iClkEnMode = 0
+MinorMode_iRxTCTrain = 0
+MinorMode_iCSTEn = 0
+MinorMode_iRxEnhancedTrainMode = 0
+MinorMode_iPhyMstr_DRAM_Mode = 0
+
+
+#########################################################################################
+#                       CFG: 8 LP: 4 BAUD: 2400 MD: 8 DFI: 2 FUNCTIONAL_TEST
+#########################################################################################
+MajorSystemMode = LP4
+MajorMode = 8
+dfi2ckratio = 1
+SimMode_iDisableDebugPrint = 0
+dfiperiod = 1506
+wck2ckratio = 1
+latencyMode = 1
+EffectiveRL = 30
+EffectiveWL = 22
+csr_WL = 4
+csr_nWR = 4
+csr_RL = 4
+csr_WLS = 1
+tWDQS_on = 14
+tWDQS_off = 37
+csr_BL = 2
+csr_PDDS = 6
+csr_RPST = 1
+csr_DQSIntervalTimerRunTime = 106
+csr_DQODT = 4
+csr_CAODT = 6
+csr_CSODT = 0
+MinorMode_iActiveRanks = 2
+MinorMode_iRetrainMode = 2
+MinorMode_iWdqsDriveMode = 0
+MinorMode_iPLLCalMode = 0
+PLL_DisableHwCal = 0
+PLL_NumCalClkCycles = 16
+MinorMode_iDLLCalibrationMode = 0
+DLL_EnablePeriodicCal = 0
+DLL_Period = 832
+DLL_OverSampleRate = 15
+DLL_CodeChangeDelay = 15
+DLL_CommandWait = 3
+DLL_DcdlStart = 0
+DLL_DcdlStep = 8
+DLL_EnableUpdateLimit = 1
+DLL_UpdateLimit = 4
+MinorMode_iDFTProgram = 0
+MinorMode_iBumpReMap_En = 1
+BumpReMapCS_0 = 6
+BumpReMapCS_1 = 7
+BumpReMapCS_2 = 8
+BumpReMapCS_3 = 9
+BumpReMapCA_0 = 0
+BumpReMapCA_1 = 1
+BumpReMapCA_2 = 2
+BumpReMapCA_3 = 3
+BumpReMapCA_4 = 4
+BumpReMapCA_5 = 5
+BumpReMapCK = 0
+BumpReMapDBYTE_0 = 0
+BumpReMapDQ0_0 = 0
+BumpReMapDQ0_1 = 1
+BumpReMapDQ0_2 = 2
+BumpReMapDQ0_3 = 3
+BumpReMapDQ0_4 = 4
+BumpReMapDQ0_5 = 5
+BumpReMapDQ0_6 = 6
+BumpReMapDQ0_7 = 7
+BumpReMapDMI_0 = 8
+BumpReMapDQS_0 = 0
+BumpReMapWCK_0 = 0
+BumpReMapDBYTE_1 = 1
+BumpReMapDQ1_0 = 0
+BumpReMapDQ1_1 = 1
+BumpReMapDQ1_2 = 2
+BumpReMapDQ1_3 = 3
+BumpReMapDQ1_4 = 4
+BumpReMapDQ1_5 = 5
+BumpReMapDQ1_6 = 6
+BumpReMapDQ1_7 = 7
+BumpReMapDMI_1 = 8
+BumpReMapDQS_1 = 0
+BumpReMapWCK_1 = 0
+MinorMode_iRetrainGateMode = 0
+MinorMode_iRxReadGateScheme = 0
+MinorMode_iDMITrainMode = 1
+MinorMode_iClkGatingMode = 3
+MinorMode_iCalibrationMode = 1
+

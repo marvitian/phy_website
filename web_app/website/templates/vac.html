@@ -1,0 +1,1098 @@
+
+
+{% extends "base.html" %}
+{% block title %} Visual Area Calculator {% endblock %}
+
+{% block content %}
+
+<html lang="en">
+    <head>
+        <title>Prototype V3.1</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="AreaCalculator.js"></script>
+        <script src="LayoutAlgorithm.js"></script>
+        <script src="canvas.js"></script>
+    </head>
+
+    <body>
+        <!-- <div style="display: flex; height: 150; padding: 0; margin: 0; justify-content: space-between;">
+
+            <div> 
+                <img width="280" height="150" src="https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2.png" class="custom-logo" alt="The Six Semiconductor Inc" decoding="async" srcset="https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2.png 400w, https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2-300x161.png 300w" sizes="(max-width: 400px) 100vw, 400px">
+                
+                <p></p>
+            </div>
+            <div class="info_bar_top">
+                <p> <span id="shapehover">Hover the mouse over an element to display data.</span></p>
+            </div>
+            <div class="info_bar_top">
+                <h2 style="margin: 0; padding: 0;" id="display_t_width">Total *PHY Width</h2>
+                <h2 style="margin: 0; padding: 0;" id="display_t_height">Total *PHY Height</h2>
+            </div>
+        </div> -->
+        <div class="top panel" >
+        
+                 <img  src="https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2.png" class="custom-logo" alt="The Six Semiconductor Inc" decoding="async" srcset="https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2.png 400w, https://www.thesixsemi.com/wp-content/uploads/2018/11/cropped-TSS-2-300x161.png 300w"  sizes="(max-width: 400px) 100vw, 400px">
+
+            
+
+                <div class="drop_down">
+                    <form>
+                        <label>TECHNOLOGY  </label>
+                        <select onchange="set_scenario(this.value)" id="DDR_STANDARD_MENU">
+                            <option value="TSMC_N12">tsmc_ n12</option>
+                            <option value="n6_540_lanewidth">n6_540_lanewidth</option>
+                            <option value="n6_640_lanewidth">n6_640_lanewidth</option>
+                            <option value="n6_688_lanewidth">n6_688_lanewidth</option>
+                            
+                            
+                        </select>
+                    </form>
+                </div>
+                <div class="drop_down">
+                    <form>
+                        <label>DDR STANDARD  </label>
+                        <select autocomplete="off" onchange="set_DDR_STANDARD(this.value)" id="DDR_STANDARD_MENU">
+                            <option value="LP4">LP4</option>
+                            <option value="LP5">LP5</option>
+                            <option value="LP54">LP54</option>
+                            
+                            
+                        </select>
+                    </form>
+                </div>
+                
+                <div class="drop_down">
+                    <form>
+                        <label>PHY CONFIG  </label>
+                        <select autocomplete="off" onchange="set_PHY_CONFIG(this.value)" id="PHY_CONFIG_MENU">
+                            <option value="1x16">1x16</option>
+                            <option value="2x16">2x16</option>
+                            <option value="1x32">1x32</option>
+                        </select>
+                    </form>
+                </div>
+                
+                <div class="drop_down"> 
+                    <form>
+                        <label>MAX RANKS </label>
+                        <select autocomplete="off" onchange="set_MAX_RANKS(this.value)" id="MAX_RANKS_MENU">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=4>4</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="drop_down"> 
+                    <form style="padding-left: 6px;">
+                        <label style="display: flex; justify-content: center; align-items: center; "> DIE EDGE  
+                        </label>
+                        <select>
+                            <option>
+                                    NORTH
+                                </option>
+                            </select>
+                        </form> 
+                </div>
+
+
+                <div id="scaleable" class="">
+                    <form>
+                    <label> DCAP MULTIPLIER  </label>
+
+                    <input autocomplete="off" oninput="set_SCALEABLE(this.value)" type="number" min="0" max="10" value="1" class="slider" id="myRange">
+                    
+                    </form>
+                </div>
+            
+        </div>
+
+        <div style="padding: 0%;" class="canvas panel">
+            <canvas class="box" id="myCanvas" height="500" width="2400"></canvas>   
+        </div>
+
+
+
+
+        <div class="HUD">
+            <div class="info_bar panel">
+                <!-- <h1>Overview</h1> -->
+                <!-- <h2 id="display_t_width">Total PHY Width</h2>
+                <h2 id="display_t_height">Total PHY Height</h2> -->
+                <h3>Lane Count</h3>
+                <table style=" width: 50%;" id="loop"></table>
+                
+
+            </div>
+            
+            <div class="info_bar panel">
+                <h2 id="display_t_height">Total *PHY Height</h2>
+                <h2 id="display_t_width">Total *PHY Width</h2>
+            </div>
+            
+            <div class="info_bar panel">
+                <h3>selection view</h3>
+                <!-- hover-debugging -->
+                <p><code></code><span id="x"></span></p>
+                <p><code></code><span id="y"></span></p>
+                <p><code><span id="window_size"></span></code></p>
+                <p> <span id="shapehover">Hover the mouse over an element to display data.</span></p>
+
+            </div>
+        </div>
+        
+        
+        
+        <p>*: Estimates based on PHY HARDIP measurements only.</p>
+        <button onclick="show()" style="border-radius: 10px;">show more</button>
+
+
+        <div class="hide" id="hide">
+            <div class="info_bar panel">
+                <h3>Technology</h3>
+                <div id="loop2"></div>
+            </div>
+            
+        </div>
+    </body>
+
+    <style>
+        button:hover{
+            color: rgb(230, 230, 230);
+            background-color: rgb(142, 142, 142);
+        }
+        button{
+            transition-duration: 0.4s;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        h3{
+            margin: 5px;
+        }
+        canvas{
+            /* width: 100%;
+            height: 100%; */
+            display: flex;
+        
+        }
+        
+        table, tr, td{
+            border:0px solid black;
+            border-collapse: collapse;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        label{
+            font-size: small;
+        }
+        .canvas{
+            align-items: center;
+            justify-content: space-evenly;
+            /* min-width: 1330px;
+            max-width: 100%; */
+        }
+        
+        body {
+            
+            
+            background-color: #65676d;
+            font-family: sans-serif;
+            color: rgb(49, 48, 48);
+            /* zoom: 0.70;  */
+            /* -moz-transform: scale(0.70); 
+            -moz-transform-origin: 0 0; */
+        }
+        
+        select {
+            padding: 10px;
+            font-size: small;
+        }
+        
+        .custom-logo{
+            width: auto;
+            height: 100px;
+        }
+        .slider{
+            width: 150px;
+            /* height: 40px; */
+            font-size: 30px;
+            
+        }
+        
+        .panel{
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0px 0px 20px 3px #00000057;
+        }
+        .top{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        
+        
+            
+            min-width: 1330px;
+            max-width: 100%;
+        }
+        
+        .wrapper{
+            min-width: 1330px;
+            max-width: 100%;
+        }
+        .drop_down{
+            padding: 1em;
+            font-size: small;
+            
+        }
+        
+        .HUD{
+            display: flex;
+            justify-content: space-between;
+            height: calc(100% - 600px);
+        }
+        
+        .info_bar{
+            width: 400px;
+            height: 30vh;
+        
+        
+        
+            font-size: large;
+        
+        
+        }
+        
+        .info_bar_top{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding-left: 1em;
+            padding-right: 1em;
+        
+            
+            font-size: small;
+        
+        
+        }
+        
+        .hide{
+            visibility:collapse;
+        }
+    </style>
+
+    <!-- AreaCalculator.js -->
+    <script>
+        // numerical calculations are done here 
+        // layout_algorithm.js determines what to draw in what order
+        // canvas.js draws it
+
+        // <characteristic variables>
+        let DDR_STANDARDS;
+        let PHY_CONFIG;
+        let MAX_RANKS;
+        let PHY_width_units;
+        let scale_factor
+        let scaled_dcap;
+        let CURRENT_SCENARIO; 
+
+        let override;   
+
+
+        // window on load to initialize after loading
+        window.onload = function() { 
+            DDR_STANDARDS = "LP4";
+            PHY_CONFIG = "1x16";
+            MAX_RANKS = 1;
+            CURRENT_SCENARIO = TSMC_N12;
+            scale_factor = 1
+            override = 300;
+            signal();
+
+        }
+
+
+
+        // definitions
+        let phy_summary = {
+            TOTAL_HEIGHT : null,
+            TOTAL_WIDTH : null
+        }
+
+        let lane_units = {
+            "LVHSSE_units" : 1, //phy
+            "DQS_units" : 2, //phy
+            "WCK_units" : 2,  // ddr
+            "CK_units" : 2, //phy
+            "LVLSSE_units" : 1, // ddr
+            "HVLSSE_units" : 1, //phy
+            "CLKGEN_units" : 5, //phy
+            "ATST_units" : 1, //phy
+            "ZCAL_units" : 1, // 1
+            "RESETN_units" : 1, // 1
+
+        }
+        let lane_colour = {
+            "LVHSSE_units" : "blue", //phy
+            "DQS_units" : "blue", //phy        
+            "WCK_units" : "blue",  // ddr
+            "CK_units" : "green", //phy
+            "LVLSSE_units" : "green", // ddr
+            "HVLSSE_units" : "yellow", //phy
+            "CLKGEN_units" : "purple", //phy
+            "ATST_units" : "yellow", //phy
+            "ZCAL_units" : "blue", // 1
+            "RESETN_units" : "yellow", // 1
+
+        }
+
+        let lane_summary_alt = {
+            "RESETN" : null, // 1
+            "ATST" : null, //phy
+            "HVLSSE" : null, //phy
+            "LVHSSE" : null, //phy
+            "LVLSSE" : null, // ddr
+            "CK" : null, //phy
+            "WCK" : null,  // ddr
+            "DQS" : null, //phy
+            "CLKGEN" : null, //phy
+            "ZCAL" : null, // 1   
+        }
+        let lane_summary= {
+            "RESETN" : null, // 1
+            "ATST" : null, //phy
+            "HVLSSE" : null, //phy
+            "LVHSSE" : null, //phy
+            "LVLSSE" : null, // ddr
+            "CK" : null, //phy
+            "WCK" : null,  // ddr
+            "DQS" : null, //phy
+            "CLKGEN" : null, //phy
+            "ZCAL" : null, // 1   
+        }
+
+
+
+
+        let TSMC_N12 = {
+            TYPE: "TSMC_N12",
+            CPP : 0.09,
+            LANE_WIDTH : Number(39.6),
+            LV2LV_SPACER_WIDTH : 0.9,
+            HV2LV_SPACER_WIDTH : 0.9,
+            lane_height : 225.216,
+            dcap_height : 20.16,
+            clamp_height : 36.288,
+        }
+        
+
+        let N6_540_LANEWIDTH = {
+            TYPE : "n6_540_lanewidth",
+            CPP : 0.057,
+            LANE_WIDTH : 31.92,
+            LV2LV_SPACER_WIDTH : 0.57,
+            HV2LV_SPACER_WIDTH : 0.57,
+            lane_height : 186.3,
+            dcap_height : 25.2,
+            clamp_height : 45.3,    
+        }
+
+
+        let N6_640_LANEWIDTH = {
+            TYPE : "n6_640_lanewidth",
+            CPP : 0.057,
+            LANE_WIDTH : 36.48,
+            LV2LV_SPACER_WIDTH : 0.57,
+            HV2LV_SPACER_WIDTH : 0.57,
+            lane_height : 166.5,
+            dcap_height : 21.9,
+            clamp_height : 39.6,    
+        }
+
+        let N6_688_LANEWIDTH = {
+            TYPE : "n6_640_lanewidth",
+            CPP : 0.057,
+            LANE_WIDTH : 39.216,
+            LV2LV_SPACER_WIDTH : 0.57,
+            HV2LV_SPACER_WIDTH : 0.57,
+            lane_height : 157.8,
+            dcap_height : 20.4,
+            clamp_height : 36.9,    
+        }
+
+
+
+        // setter functions
+        // TRIGGERED BY:    main.html onClick()
+        // TRIGGERS:        signal()
+        // EFFECTS:         <characteristic variables>
+        function set_DDR_STANDARD(input){
+            DDR_STANDARDS = input;
+            signal();
+        }
+
+        function set_PHY_CONFIG(input){
+            PHY_CONFIG = input;
+            signal();
+        }
+
+        function set_MAX_RANKS(input){
+            MAX_RANKS = Number(input);
+            signal();
+        }
+
+        function set_scenario(input){
+            switch(input){
+                case "TSMC_N12":
+                    CURRENT_SCENARIO = TSMC_N12;
+                    break;
+                case "n6_540_lanewidth":
+                    CURRENT_SCENARIO = N6_540_LANEWIDTH;
+                    break;
+                case "n6_640_lanewidth":
+                    CURRENT_SCENARIO = N6_640_LANEWIDTH;
+                    break;
+                case "n6_688_lanewidth":
+                    CURRENT_SCENARIO = N6_688_LANEWIDTH;
+                    break;
+                default:
+                    window.alert("Not yet available. please make another selection");
+            }
+            signal();
+        }
+
+
+
+        function set_SCALEABLE(input){
+            scale_factor = Number(input);
+            // console.log(input)
+            signal();
+        }
+
+
+        // sets every property of 'lane_summary' based on the current state of 'DDR_STANDARD', 'PHY_CONFIG', and 'MAX_RANKS'
+        // TRIGGERED BY:    update()
+        // TRIGGERS:        none
+        // EFFECTS:         lane_summary, PHY_width_units
+        function set_lane_summary(){
+            PHY_width_units = 0;
+
+
+            // LVHSSE
+            if( PHY_CONFIG == "1x32"){
+                lane_summary.LVHSSE = 36;
+            }else{
+                lane_summary.LVHSSE = 18;
+            }
+            
+
+
+            
+
+
+            // DQS
+
+            if(PHY_CONFIG == "1x32"){
+                lane_summary.DQS = 4;
+            } else {
+                lane_summary.DQS = 2;
+            }
+
+            
+
+            // WCK
+            if(DDR_STANDARDS == "LP4"){
+                lane_summary.WCK = 0;
+            } else {
+
+                if(PHY_CONFIG == "1x32"){
+                    lane_summary.WCK = 4;
+                } else {
+                    lane_summary.WCK = 2;
+                }
+            }
+
+
+            // CK
+            if(PHY_CONFIG == "1x32"){
+                lane_summary.CK = 2;
+            } else {
+                lane_summary.CK = 1;
+            }
+            
+            
+
+
+            // LVLSSE
+            if( DDR_STANDARDS == "LP5"){
+                lane_summary.LVLSSE = 7;
+            } else {
+                lane_summary.LVLSSE = 6 + MAX_RANKS;
+            }
+
+
+            // HVLSSE
+            lane_summary.HVLSSE = MAX_RANKS;
+            
+
+            // CLKGEN
+            lane_summary.CLKGEN = 1;
+
+
+
+            // ATST
+            lane_summary.ATST = 1;
+
+
+            // ZCAL 
+            lane_summary.ZCAL = 1;
+
+
+            // RESETN  
+            lane_summary.RESETN = 1;
+
+
+            // handle 2x16
+            if (PHY_CONFIG == "2x16"){
+                for(const property in lane_summary_alt){
+                    if(property == "RESETN"){ 
+                        lane_summary_alt[property] = lane_summary[property]
+                        continue;
+                    }
+                    lane_summary_alt[property] = lane_summary[property] * 2 
+                }
+                PHY_width_units = lane_summary_alt.LVHSSE + 2*lane_summary_alt.DQS + 2*lane_summary_alt.WCK + 2*lane_summary_alt.CK + lane_summary_alt.LVLSSE + lane_summary_alt.HVLSSE + 5*lane_summary_alt.CLKGEN + lane_summary_alt.ATST + lane_summary_alt.ZCAL + lane_summary_alt.RESETN;
+            } else {
+                for(const property in lane_summary_alt){
+                    lane_summary_alt[property] = lane_summary[property]  
+                }
+                PHY_width_units = lane_summary.LVHSSE + 2*lane_summary.DQS + 2*lane_summary.WCK + 2*lane_summary.CK + lane_summary.LVLSSE + lane_summary.HVLSSE + 5*lane_summary.CLKGEN + lane_summary.ATST + lane_summary.ZCAL + lane_summary.RESETN;
+            }
+            
+            
+            // ##################unit calculation########################################### //       
+            
+
+        }
+
+
+        // ###################      maybe i should put the um calculations here in another function ##################### //
+
+        function calculate(){
+            let temp_wid = (PHY_width_units * CURRENT_SCENARIO.LANE_WIDTH) + CURRENT_SCENARIO.HV2LV_SPACER_WIDTH + CURRENT_SCENARIO.LV2LV_SPACER_WIDTH;
+            scaled_dcap = (scale_factor) * (CURRENT_SCENARIO.dcap_height);
+            // SCALABLE_HEIGHT = (scale_factor) * (CURRENT_SCENARIO.dcap_height)
+            phy_summary.TOTAL_WIDTH = temp_wid;
+            phy_summary.TOTAL_HEIGHT = CURRENT_SCENARIO.lane_height + CURRENT_SCENARIO.clamp_height + scaled_dcap;
+            set_measure(override)
+            // phy_summary.TOTAL_HEIGHT = CURRENT_SCENARIO.lane_height;
+        }
+
+        function set_measure(override){
+            let temp_wid = (PHY_width_units * CURRENT_SCENARIO.LANE_WIDTH) + CURRENT_SCENARIO.HV2LV_SPACER_WIDTH + CURRENT_SCENARIO.LV2LV_SPACER_WIDTH;
+            measurement_scale = ((window.innerWidth - 300)/temp_wid);
+
+
+        }
+
+
+        function signal(){
+            set_lane_summary();
+            calculate();
+            disp_summary();
+            lane_placement_algo();
+            prep();
+            render();
+            // set_measure();
+            console.log(lane_summary)
+            console.log(lane_summary_alt)
+        }
+    </script>
+
+    <!-- canvas.js -->
+    <script>
+        
+        const blue = "#76b5c5"
+        const red = "#ff0000"
+        const yellow = "#eab676"
+        const green = "#00FF00"
+        const purple = "#A020F0"
+        const fill = "#231e1e"
+
+        let measurement_scale = 1
+
+        let shape;
+        let ctx;
+        let text;
+        let arr;
+
+        let start_y = 150;
+
+        // TEMPORARY: used for slider to scale the canvas, eventually the scale should be automatic 
+        // function scale_slide(input){
+        //     measurement_scale = input/100;
+        //     signal();
+
+        // }
+        function prep() {
+
+            arr = [];
+            shape = document.getElementById("myCanvas");
+            ctx = shape.getContext('2d');
+            text = shape.getContext('2d');
+
+            // add starting point
+            start = new Shape(20, start_y, 0, 0, "start");
+            arr.push(start)
+
+            let box = document.querySelector(".box");
+
+            check_border();
+
+
+            box.addEventListener("mousemove", updateDisplay, false);
+            box.addEventListener("mouseenter", updateDisplay, false);
+            box.addEventListener("mouseleave", updateDisplay, false);
+
+
+        }
+
+
+        class Shape {
+            x;
+            y;
+            width;
+            height;
+            info;
+
+            constructor(x,y,w,h,info){
+                this.x = x;
+                this.y = y;
+                this.width = w;
+                this.height = h;
+                this.info = info;
+            }
+
+        }
+
+        function rot_rect(x,y,w,h){
+            ctx.fillRect(-y,x,-h,w);
+        }
+        function rot_line(x,y,w,h){
+            ctx.strokeRect(-y,x,-h,w);
+        }
+
+        function rot_text(label, x, y, w, h){
+            text.fillText(label, -(y + 2.5*h/4) , (x+w/2));
+        }
+
+
+        function addShape(w,h,colour,label_given, info){
+            prevShape = arr[arr.length - 1]
+            // IF (prevShape doesnt exist: (0,0)   )
+            newx = prevShape.x + prevShape.width;
+            newy = prevShape.y;
+            
+            newShape = new Shape(newx, newy, w, h, info);
+            arr.push(newShape)
+            text.save();
+            ctx.rotate( 3*Math.PI / 2);
+            ctx.fillStyle = colour;
+            
+            rot_rect(newShape.x, newShape.y, newShape.width, newShape.height);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = fill;
+            rot_line(newShape.x,newShape.y,newShape.width,newShape.height);
+            text.fillStyle = "#000000";
+            
+            text.font = "12px sans-serif";
+            rot_text(label_given, newShape.x, newShape.y, newShape.width, newShape.height);
+            text.restore();
+            // ****************
+
+
+        }
+
+
+        function clearfunct(){
+            ctx.clearRect(0, 0, shape.width, shape.height);
+            arr.length = 0; // clear cache of shapes 
+            // console.log("we tried to clear")
+            prep();
+        }
+
+
+
+        function render(){
+            let total_wid =0;
+            clearfunct();
+            // for the lane summary elements 
+            for(let i = 0; i < Lane_formatted.length; i++){
+                let w = Lane_formatted[i]["units"]*CURRENT_SCENARIO.LANE_WIDTH * measurement_scale;
+                let h = CURRENT_SCENARIO.lane_height * measurement_scale;
+                let colour = lane_colour[Lane_formatted[i]["Lane Type"]+"_units"];
+                // let colour = lane_colour[LaneType[i]+"_units"];
+                let label = Lane_formatted[i]["Lane Mapping"];
+                let info = Lane_formatted[i];                       // what ever you put here is displayed on mouse hover! any object will work
+                addShape(w, h, colour,label, info);
+                total_wid += w;
+                // console.log(info)
+            }
+
+
+
+            // for DCAP + ESD CLAMP 
+            
+            // clamp based on current scenario only
+
+            ctx.fillStyle = "#a0b6eb";
+            ctx.fillRect(20, start_y, total_wid, -measurement_scale *CURRENT_SCENARIO.clamp_height);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = fill;
+            ctx.strokeRect(20, start_y, total_wid, - measurement_scale *CURRENT_SCENARIO.clamp_height);
+            text.fillStyle = 'Black';
+            ctx.fillText("CLAMP", 20+total_wid/2, start_y- measurement_scale * CURRENT_SCENARIO.clamp_height/2);
+            
+            // dcap ...
+            ctx.fillStyle = "#a0b6eb";
+            ctx.fillRect(20, start_y- measurement_scale * CURRENT_SCENARIO.clamp_height, total_wid, -measurement_scale*scaled_dcap )
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = fill;
+            ctx.strokeRect(20, start_y- measurement_scale * CURRENT_SCENARIO.clamp_height, total_wid, -measurement_scale*scaled_dcap );
+            text.fillStyle = 'Black';
+            ctx.fillText("DCAP", 20+total_wid/2, start_y-measurement_scale *CURRENT_SCENARIO.clamp_height -(measurement_scale*scaled_dcap/2));
+
+            
+
+        }
+
+
+
+
+
+
+        // below is for mouse events:
+
+        // DESCRIPTION:     displays info about content bseing hovered with mouse in real time.
+        function updateDisplay(event) {
+            let mousex = event.pageX - 20;
+            let mousey = event.pageY -140;
+
+
+
+            // hover-debugging
+            // document.getElementById("x").innerText = mousex;
+            // document.getElementById("y").innerText = mousey;
+            // document.getElementById("window_size").innerText = window.innerWidth;
+
+
+            document.getElementById("shapehover").innerHTML = '';
+            
+            if( mousey < (start_y - measurement_scale*(CURRENT_SCENARIO.clamp_height + scaled_dcap))  || mousey > start_y + CURRENT_SCENARIO.lane_height * measurement_scale || mousex < 20 || mousex > arr[arr.length-1].x + arr[arr.length-1].width){
+                return;
+            }
+            if( mousey < start_y - measurement_scale*(CURRENT_SCENARIO.clamp_height) ){
+                document.getElementById("shapehover").innerHTML = `<div> DCAP </div> <div>height: ${scaled_dcap.toFixed(3)} &micro;m </div><div>width: ${phy_summary.TOTAL_WIDTH.toFixed(3)} &micro;m </div>`;
+                
+                return;
+            }
+            if( mousey < start_y  ){
+                document.getElementById("shapehover").innerHTML = `<div> VDDQ CLAMP </div> <div>height: ${CURRENT_SCENARIO.clamp_height} &micro;m </div><div>width: ${phy_summary.TOTAL_WIDTH.toFixed(3)} &micro;m </div>`;
+                
+                return;
+            }
+
+            for(let i = 0 ; i< arr.length; i++){
+                if(mousex - (arr[i].x + arr[i].width ) < 0 ){
+                    for(const property in arr[i].info){
+                        document.getElementById("shapehover").innerHTML += `<div>${property}: ${arr[i].info[property]}</div>`;
+                        
+
+                    }
+                    break;
+                }
+            }
+        }
+
+
+
+
+        function disp_summary(){
+            let h = phy_summary.TOTAL_HEIGHT;
+            document.getElementById('display_t_height').innerHTML = "Total *PHY height : " + h.toFixed(3) + "  &micro;m";
+            
+            let w = phy_summary.TOTAL_WIDTH;
+            document.getElementById("display_t_width").innerHTML = "Total *PHY width : " + w.toFixed(3) + "  &micro;m";
+
+
+
+            document.getElementById("loop").innerHTML = '';
+            for (const property in lane_summary_alt) {
+                document.getElementById("loop").innerHTML +=`<tr><td>${property} </td> <td style="text-align: right"> ${lane_summary_alt[property]} </td> </tr>`;
+            }
+
+            document.getElementById("loop2").innerHTML = '';
+            for (const property in CURRENT_SCENARIO){
+                if(property == "TYPE"){
+                    document.getElementById("loop2").innerHTML += `<div>${property}: ${CURRENT_SCENARIO[property]}</div>`
+                    continue;
+                }else{
+                    document.getElementById("loop2").innerHTML += `<div>${property}: ${CURRENT_SCENARIO[property]} &micro;m</div>`
+                }
+            }
+
+            let slider = document.getElementById("myRange");
+
+
+        }
+
+        function check_border(){
+            // if(start_y + CURRENT_SCENARIO.lane_height * measurement_scale > 400 ){
+            //     override = start_y + CURRENT_SCENARIO.lane_height; 
+            //     console.log(override);
+            //     signal();
+            
+            // }
+
+            if((start_y-measurement_scale *CURRENT_SCENARIO.clamp_height -measurement_scale*scaled_dcap) <= 5 ){
+                start_y = start_y + 30
+                signal();
+            }else if((start_y-measurement_scale *CURRENT_SCENARIO.clamp_height -measurement_scale*scaled_dcap) > 45){
+                start_y = start_y - 30
+                signal();
+            }
+        }
+
+        function show(){
+            document.getElementById("hide").classList.toggle('hide');
+        }
+
+    </script>
+
+    <!-- LayoutAlgorith.js -->
+    <script>
+        let LaneType = [];
+        let Lane_formatted = [];
+        let blue_half = [];
+        let blue_quar = [];
+
+        let LaneMapping = [];
+
+        // DESCRIPTION:         step one:   arrange the colours (lane types order) arrange clocks,
+        // DESCRIPTION:         step two:   fill with more structure and make low level decisions (such as where clk, ck, wck, etc. will go)
+        // TRIGGERED BY:        signal()
+        // TRIGGERS:            
+        // EFFECTS:             
+        function lane_placement_algo(){
+
+
+            LaneType = [];
+            blue_half = [];
+            blue_quar = [];
+            Lane_formatted = [];
+
+            // ############################STEP ONE############################ //
+            // ############################STEP ONE############################ //
+            // ############################STEP ONE############################ //
+            // ############################STEP ONE############################ //
+            // ############################STEP ONE############################ //
+            
+            LaneType.push("RESETN");
+            LaneType.push("ATST");
+            // HVLSSE
+            for(let i = 0 ; i < lane_summary.HVLSSE; i++){
+                LaneType.push("HVLSSE"); 
+            }
+            // LVLSSE
+            for(let i = 0; i< lane_summary.LVLSSE; i++){
+                // see math for reasoning 
+                if(i == Math.ceil((lane_summary.LVLSSE-lane_summary.HVLSSE)/2) ){
+                    LaneType.push("CK");
+                }
+                LaneType.push("LVLSSE");
+            }
+
+            
+            //lvhsse blue 1st half
+            if(lane_summary.LVHSSE < 20){
+
+                for(let i = 0 ; i < (lane_summary.LVHSSE / 2) ; i++ ){
+                    if(i == Math.ceil(  Math.ceil(lane_summary.LVHSSE / 2) / 2 ) ){
+                        LaneType.push("DQS");
+                        blue_half.push("DQS");
+                        if(lane_summary.WCK != 0){
+                            LaneType.push("WCK");
+                            blue_half.push("WCK");
+                        }
+                    }
+                    LaneType.push("LVHSSE");
+                    blue_half.push("LVHSSE");
+                }
+            } else {
+                for(let i = 0 ; i < (lane_summary.LVHSSE / 4) ; i++ ){
+                    if(i == Math.ceil(lane_summary.LVHSSE / 8) ){
+                        LaneType.push("DQS");
+                        blue_quar.push("DQS");
+                        blue_half.push("DQS");
+                        if(lane_summary.WCK > 0){
+                            LaneType.push("WCK");
+                            blue_quar.push("WCK");
+                            blue_half.push("WCK");
+                        }
+                    }
+                    LaneType.push("LVHSSE");
+                    blue_quar.push("LVHSSE");
+                    blue_half.push("LVHSSE");
+                }
+                for(let i = blue_quar.length -1; i >=0 ; i--){
+                    LaneType.push(blue_quar[i]);
+                    blue_half.push(blue_quar[i]);
+                }
+            }
+                
+            //clkgen
+            LaneType.push("CLKGEN");
+
+            //blue second half
+            // console.log(blue_half);
+            for(let i = blue_half.length - 1 ; i >= 0;  i-- ){
+                LaneType.push(blue_half[i]);
+            }
+
+            //zcal
+            LaneType.push("ZCAL");
+            
+            
+            // ############################STEP TWO############################ //
+            // ############################STEP TWO############################ //
+            // ############################STEP TWO############################ //
+            // ############################STEP TWO############################ //
+            // ############################STEP TWO############################ //
+
+            LaneMapping = [];
+
+
+
+
+            if(DDR_STANDARDS == "LP4"){
+                let count_cs = MAX_RANKS;
+
+                for(let i = 0; i < LaneType.length; i++){
+                    switch(LaneType[i]){
+                        case "HVLSSE":
+                            LaneMapping.push( "CKE");
+                            break;
+                        case "LVLSSE":
+                            if(count_cs > 0 ){
+                                LaneMapping.push( "CS");
+                                count_cs--;
+                            } else {
+                                LaneMapping.push( "CA");
+                            }
+                            break; 
+                        case "LVHSSE":
+                            LaneMapping.push( "DQ");
+                            break;
+                        default:
+                            LaneMapping.push( LaneType[i]);
+                        }
+                }
+
+            }   else if (DDR_STANDARDS == "LP5"){
+
+                
+                for(let i = 0; i < LaneType.length ; i++ ){
+                    switch(LaneType[i]){
+                        case "HVLSSE":
+                            LaneMapping.push( "CS");
+                            break;
+                        case "LVLSSE":
+                            
+                            LaneMapping.push( "CA");
+                            
+                            break; 
+                        case "LVHSSE":
+                            LaneMapping.push( "DQ");
+                            break;
+                        default:
+                            LaneMapping.push( LaneType[i]);
+                    }
+                }
+            }   else { 
+                let count_cs = MAX_RANKS;
+
+                for(let i = 0; i < LaneType.length; i++ ){
+                    switch(LaneType[i]){
+                        case "HVLSSE":
+                            LaneMapping.push("CS  /  CKE");
+                            break;
+                        case "LVLSSE":
+                            if(count_cs > 1){
+                                LaneMapping.push("N/A  /  CS");
+                                count_cs--;
+                            } else if (count_cs == 1){
+                                LaneMapping.push("CA  /  CS");
+                                count_cs--;
+                            } else {
+                                LaneMapping.push("CA");
+                            }
+                            break; 
+                        case "LVHSSE":
+                            LaneMapping.push( "DQ");
+                            break;
+                        default:
+                            LaneMapping.push( LaneType[i]);
+                    }
+                }
+
+            } 
+
+            // this might cause issues ******  looks good , dont remember why i thought this so ill leave this here.... -\_0_-
+            for(let i = 0; i< LaneType.length; i++){
+                Lane_formatted.push(
+                    {
+                    "Lane Type"     : LaneType[i],
+                    "Lane Mapping"      : LaneMapping[i], 
+                    "units"     : lane_units[LaneType[i]+"_units"],
+                    "height"    : CURRENT_SCENARIO.lane_height+ " &micro;m",
+                    "width"     : (lane_units[LaneType[i]+"_units"] * CURRENT_SCENARIO.LANE_WIDTH).toFixed(3) + " &micro;m"
+                    }
+                );
+
+            }
+
+
+
+
+            // this section will perform the 2x16 transformation....
+            let temp_lane_arr = [];
+            if(PHY_CONFIG=="2x16"){
+                for(let i = LaneType.length-1; i>0 ; i--){
+                    temp_lane_arr.push(Lane_formatted[i]);
+                }
+                for(let i = 0 ; i< LaneType.length; i++ ){
+                    temp_lane_arr.push(Lane_formatted[i]);
+                }
+                Lane_formatted = temp_lane_arr;
+            }
+
+
+            console.log(Lane_formatted);
+            // console.log(Lane_formatted);
+
+            
+
+        }
+    </script>
+
+</html>
+
+{% endblock %}

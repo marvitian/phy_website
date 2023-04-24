@@ -1,0 +1,344 @@
+<!-- exted template -->
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+  <div> <!-- All Content Container-->
+  <!-- Modal -->
+  <!-- when button is clicked redirect to create enpoint -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">CSRInit Struct Parameters</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal Body -->
+        <div class="modal-body center">
+          <!-- <p>This is a large modal.</p> -->
+          <h5>Required Parameters</h3>
+          <hr id="func-mode-border" class="border-4 border-top rounded">
+          <!-- <br /> -->
+          <!--  -->
+          
+          <!-- form to allow users to add notes-->
+          <!-- action=send to verification endpoint -->
+          <!-- https://stackoverflow.com/questions/65066253/how-to-make-a-redirect-button-in-flask-template#:~:text=If%20you%20want%20your%20form,redirect%20function%20provided%20by%20flask. -->
+          <form id="request-form">
+              <div class="form-row">
+                <!-- Major System Mode -->
+                <div class="col-md-5 mb-3">
+                    <label for="MajorSystemMode" class="form-label">Protocol</label>
+                    <select id="MajorSystemMode" name="MajorSystemMode" class="selectpicker form-control bg-light" >
+                      <option value="Choose Mode" selected>Choose...</option>
+                        {% if data.MajorSystemMode %}
+                          {% for i in data.MajorSystemMode.split(",") %}
+                            <option value="{{ i }}">{{ i }}</option>
+                          {% endfor %}
+                        {% endif %}
+                      
+                    </select>
+                </div>
+
+                <!-- Minor Mode -->
+                <div class="col-md-5 mb-3">
+                  <label for="MinorMode" class="form-label"></label>
+                    <!-- <select id="MinorMode" name="MinorMode" class="selectpicker form-control bg-light">
+                      <option value="Choose Mode" selected>Choose...</option>
+                        {% if data.MinorMode %}
+                          {% for i in data.MinorMode.split(",") %}
+                              <option value="{{ i }}">{{ i }}</option>
+                          {% endfor %}
+                        {% endif %}
+                      
+                    </select> -->
+                    <input type="hidden" name="MinorMode" value="x16">
+                    <button type="button" class="btn btn-light btn-outline-dark form-control text-dark" 
+                        onmouseover="if(!this.classList.contains('btn-outline-success')) { this.classList.add('btn-outline-light', 'text-white'); }" 
+                        onmouseout="if(!this.classList.contains('btn-outline-success')) { this.classList.remove('btn-outline-light', 'text-white'); }" 
+                        onclick="toggleByteMode(this); document.querySelector('#request-form input[name=MinorMode]').value = this.title;">
+                        Byte Mode
+                    </button>
+                </div>
+              </div> <!-- / form-row 1 -->
+
+              <div class="form-row">
+                <!-- DFI to CK Ratio -->
+                <div class="col-md-5 mb-3">
+                  <label for="DFI2CKRatio" class="form-label">DFI to CK Ratio</label>
+                  <select id="DFI2CKRatio" name="DFI2CKRatio" class="selectpicker form-control bg-light">
+                    <option value="Choose Mode" selected>Choose...</option>
+                      {% if data.DFI2CKRatio %}
+                        {% for i in data.DFI2CKRatio.split(",") %}
+                            <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                      {% endif %}
+                    
+                  </select>
+                </div>
+
+                <!-- Baud Rate -->
+                <div class="col-md-5 mb-3">
+                  <label for="baudRate" class="form-label">Baud Rate</label>
+                  <input type="number" class="form-control" id="baudRate" name="baud">
+                </div>
+              </div> <!-- / form-row 2-->
+
+              <br />
+              <!-- Functional Spec/Mode Parameters BUTTON -->
+              <h5>Additional Parameters</h3>
+              <hr id="func-mode-border" class="border-2 border-top rounded">
+              <!-- <div class="form-row">
+                  <button id="expand-btn" class="btn btn-out-dashed btn-sm" style="width:100%" onclick="toggleDisplay(expand-btn)"> Add Functional Mode </button>
+              </div> -->
+
+              <!-- Functional Spec/Mode Parameters -->
+              {% for i in range(0, len(spec_keys), 2) %}  <!-- Iterate over keys 2 at a time -->
+                <div class="form-row" id="spec-key-row{{i}}">
+                  <div class="col-md-5 mb-3"> <!-- Field 1 -->
+                    <label for="{{spec_keys[i]}}" class="form-label">{{spec_keys[i]}}</label>
+                    <input type="number" class="form-control" id="{{spec_keys[i]}}" name="{{spec_keys[i]}}">
+                  </div>
+                  
+                  <div class="col-md-5 mb-3"> <!-- Field 2 -->
+                    <label for="{{spec_keys[i+1]}}" class="form-label">{{spec_keys[i+1]}}</label>
+                    <input type="number" class="form-control" id="{{spec_keys[i+1]}}" name="{{spec_keys[i+1]}}">
+                  </div>
+                </div>
+              {% endfor %}
+              {% for i in range(0, len(mode_keys), 2) %}  <!-- Iterate over keys 2 at a time -->
+                <div class="form-row" id="mode-key-row{{i}}">
+                  <div class="col-md-5 mb-3"> <!-- Field 1 -->
+                    <label for="{{mode_keys[i]}}" class="form-label">{{mode_keys[i]}}</label>
+                    <input type="number" class="form-control" id="{{mode_keys[i]}}" name="{{mode_keys[i]}}">
+                  </div>
+                  
+                  <div class="col-md-5 mb-3"> <!-- Field 2 -->
+                    <label for="{{mode_keys[i+1]}}" class="form-label">{{mode_keys[i+1]}}</label>
+                    <input type="number" class="form-control" id="{{mode_keys[i+1]}}" name="{{mode_keys[i+1]}}">
+                  </div>
+                </div>
+              {% endfor %}
+              
+                
+              
+                
+
+              
+          </form>
+        </div>
+
+        <!-- Modal Footer  -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" name="action" value="Close" >Close</button>
+          <button type="submit" class="btn btn-default btn-primary" name="action" value="Submit" form="request-form">Submit</button>
+        </div>
+
+      </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+
+
+    // Hide Button
+    /*
+    function toggleDisplay(id) {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }*/
+
+    //const buttonE = document.getElementById()
+
+    
+  </script>
+
+
+  <!-- Request Table -->
+  <!-- <div class="row justify-content-center">
+    <div class="col-auto"> -->
+      <div id="table-container">
+        <table class="table table-striped table-hover table-responsive">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 150px"></th>
+              <th scope="col" style="width: 150px">Protocol</th>
+              <th scope="col" style="width: 150px">Byte Mode</th>
+              <th scope="col" style="width: 150px">DFI2CK Ratio</th>
+              <th scope="col" style="width: 150px">Baud</th>
+              <th scope="col" style="width: 150px">Status</th>
+              <th scope="col" style="width: 50px"></th>
+              <th scope="col" style="width: 50px">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">+</button>
+              </th>
+
+              
+            </tr>
+          </thead>
+          <tbody>
+            <!-- populate from db -->
+            {% if prev_requests %}
+              {% for req_idx, request in py_enumerate(prev_requests) %}
+                  <tr> 
+                    <th scope="row">{{ req_idx }}</th>
+                    {% for key, val in py_json_loads(request.data).items() %}
+                      {% if ( (key == 'MajorSystemMode' or key == 'MinorMode' or key == 'DFI2CKRatio' or key == 'baud') ) %}
+                        <td>{{ val }}</td>
+                      {% endif %}
+                    {% endfor %}
+                    <td>{{ request.status }} </td>
+                    <td></td>
+                    <td>
+                        
+                      {% if ( (request.status == 'Ready') or (request.status == 'Complete') ) %}
+                        <a type="button" class="btn" aria-disabled="true" href="/download/{{req_idx}}">
+                          <!-- <i class="material-icons text-warning">edit</i> -->
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                          </svg>
+                        </a>
+
+                      {% else %}
+                        <a type="button" class="btn disabled" aria-disabled="true" href="/download">
+                          <!-- <i class="material-icons text-warning">edit</i> -->
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                          </svg>
+                        </a>
+
+                      {% endif %}
+                    </td>
+                  </tr>
+              {% endfor %}
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    <!-- </div>
+  </div> -->
+
+  </div>
+
+  <script>
+    
+    function toggleByteMode(button) {
+      if (button.classList.contains('btn-outline-success')) {
+        button.classList.remove('btn-outline-success');
+        button.classList.add('btn-outline-dark');
+        button.title = 'x16';
+      } else {
+        button.classList.remove('btn-outline-dark');
+        button.classList.add('btn-outline-success');
+        button.title = 'x8';
+      }
+
+      // update hover text
+      if (button.title === 'x8') {
+        button.setAttribute('data-original-title', 'x8');
+      } else {
+        button.setAttribute('data-original-title', '');
+      }
+    }
+
+
+    // Sending request data to be rendered and processed
+    /* 
+    https://simonplend.com/how-to-use-fetch-to-post-form-data-as-json-to-your-api/
+    */
+    function handleErrors(response) {
+      if (!response.ok) {
+       console.log("In Handle Errors");
+        console.log(response);
+          console.log(JSON.stringify(response));
+          //throw Error(response.statusText);
+          return ;
+      }
+    }
+
+    // https://www.pluralsight.com/guides/handling-nested-http-requests-using-the-fetch-api
+    async function handleFormSubmit(event) {
+
+      console.log("In handleFormSubmit")
+      event.preventDefault();
+      
+      // Get form data
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+      const plainFormData = Object.fromEntries(formData.entries());
+      const formDataJsonString = JSON.stringify(plainFormData);      
+      let success_flag = true;
+
+      // Rendering
+      const render = await fetch('/render-new-request', { 
+          method: 'POST',
+          headers: {
+            "Content-Type": "text/html"
+          },
+          body: formDataJsonString  
+        }
+        ).then( (_res) => {
+          // Internal error
+          if (!_res.ok) {
+            console.log("Internal Error");
+            console.log("_res = ", _res);
+            console.log(JSON.stringify(_res));
+            success_flag = false;
+            //throw Error(_res.statusText);
+          }
+          else{
+            console.log("Rendering Complete ... Reloading Window");
+            window.location.reload();
+          }
+      }).catch(handleErrors);
+
+      // Query DB - only if request is added successfully
+      if (success_flag){
+        console.log("success_flag = ", success_flag)
+        const process = await fetch ('/process-new-request', {
+            method: 'POST',
+            headers: {
+              "Content-Type": "text/html"
+            },
+            body: formDataJsonString
+          }
+          ).then( (_res) => {
+            console.log("_res = ", _res);
+            window.location.href = "/";
+            console.log("Processing Complete");
+        }).catch(handleErrors);
+      }
+      else {
+        console.log("success_flag = ", success_flag)
+        const error = await fetch ('/request-error', {
+            method: 'POST',
+            headers: {
+              "Content-Type": "text/html"
+            }
+          }).then( (_res) => {
+            console.log("Error Posting Successful ... Reloading Window");
+            console.log("_res = ", _res);
+            window.location.reload();
+        }).catch(handleErrors);
+      }
+    }
+
+    
+    console.log("Adding Event Listener ... ")
+    const exampleForm = document.getElementById("request-form");
+    console.log("exampleForm = ", exampleForm)
+    exampleForm.addEventListener("submit", handleFormSubmit);
+    
+  </script>
+{% endblock %}
